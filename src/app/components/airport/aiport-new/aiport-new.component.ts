@@ -1,5 +1,5 @@
 import { error } from '@angular/compiler/src/util';
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Airport } from '../../../models/airport';
 import { AirportService } from '../../../services/airport.service';
