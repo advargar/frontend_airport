@@ -4,8 +4,6 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AiportNewComponent } from './components/airport/aiport-new/aiport-new.component';
-import { AiportDetailComponent } from './components/airport/aiport-detail/aiport-detail.component';
 import { AirplaneNewComponent } from './components/airplane/airplane-new/airplane-new.component';
 import { AirplaneDetailComponent } from './components/airplane/airplane-detail/airplane-detail.component';
 import { FlightNewComponent } from './components/flight/flight-new/flight-new.component';
@@ -15,12 +13,11 @@ import { FlightCatalogNewComponent } from './components/flightCatalog/flight-cat
 import { HeaderTopComponent } from './components/global/header-top/header-top.component';
 import { FooterComponent } from './components/global/footer/footer.component';
 import { HomeComponent } from './components/global/home/home.component';
+import { AirlineDetailComponent } from './components/airline/airline-detail/airline-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AiportNewComponent,
-    AiportDetailComponent,
     AirplaneNewComponent,
     AirplaneDetailComponent,
     FlightNewComponent,
@@ -29,7 +26,8 @@ import { HomeComponent } from './components/global/home/home.component';
     FlightCatalogNewComponent,
     HeaderTopComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    AirlineDetailComponent
   ],
   imports: [
     BrowserModule,
