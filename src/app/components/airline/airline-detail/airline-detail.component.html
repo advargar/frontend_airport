@@ -8,12 +8,12 @@ style="background-image:url('https://www.nacion.com/resizer/KKBeqpR6_xxol6asPYBR
   <p class="flex-grow font-bold text-white text-left md:text-center ">Esta es la lista de aerolíneas que vuelan desde y hacia el aeropuerto de Guanacaste, Costa Rica</p>
   <div class="flex flex-wrap -mx-2">
 
-    <div class="sm:flex sm:items-center px-6 py-4">
+    <div class="sm:flex sm:items-center px-6 py-4" *ngFor="let airline of airlines">
       <img class="block h-16 sm:h-24 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0" src="https://2.bp.blogspot.com/-MO6r2C2sxZs/VlSwLwkt6ZI/AAAAAAAAOF0/E16SS_l7N3A/s1600/concorde.gif" alt="">
       <div class="text-center sm:text-left sm:flex-grow">
         <div class="mb-4">
-          <p class="text-xl capitalize leading-tight">Nombre aerolinea</p>
-          <p class="text-sm leading-tight text-grey-dark">Alias</p>
+          <p class="text-xl capitalize leading-tight">{{airline.name}}</p>
+          <p class="text-sm leading-tight text-grey-dark">{{airline.alias}}</p>
         </div>
       </div>
     </div>
