@@ -17,6 +17,15 @@ import { HeaderTopComponent } from './components/global/header-top/header-top.co
 import { FooterComponent } from './components/global/footer/footer.component';
 import { HomeComponent } from './components/global/home/home.component';
 import { AirlineDetailComponent } from './components/airline/airline-detail/airline-detail.component';
+import { EmployeeDetailComponent } from './components/employee/employee-detail/employee-detail.component';
+import { EmployeeNewComponent } from './components/employee/employee-new/employee-new.component';
+import { AirlineNewComponent } from './components/airline/airline-new/airline-new.component';
+import { PilotDetailComponent } from './components/pilot/pilot-detail/pilot-detail.component';
+import { PilotNewComponent } from './components/pilot/pilot-new/pilot-new.component';
+import { RegisterUserComponent } from './components/user/register-user/register-user.component';
+import { AirportNewComponent } from './components/airport/airport-new/airport-new.component';
+import { AirportDetailComponent } from './components/airport/airport-detail/airport-detail.component';
+import { LoginUserComponent } from './components/user/login-user/login-user.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +39,16 @@ import { AirlineDetailComponent } from './components/airline/airline-detail/airl
     HeaderTopComponent,
     FooterComponent,
     HomeComponent,
-    AirlineDetailComponent
+    AirlineDetailComponent,
+    EmployeeDetailComponent,
+    EmployeeNewComponent,
+    AirlineNewComponent,
+    PilotDetailComponent,
+    PilotNewComponent,
+    RegisterUserComponent,
+    AirportNewComponent,
+    AirportDetailComponent,
+    LoginUserComponent
   ],
   imports: [
     BrowserModule,

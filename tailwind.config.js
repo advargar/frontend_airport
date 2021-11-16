@@ -950,7 +950,7 @@ module.exports = {
     textColor: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
     textDecoration: ['responsive', 'group-hover', 'focus-within', 'hover', 'focus'],
     textOpacity: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
-    textOverflow: ['responsive'],
+    textOverflow: ['responsive','hover', 'focus'],
     textTransform: ['responsive'],
     transform: ['responsive'],
     transformOrigin: ['responsive'],

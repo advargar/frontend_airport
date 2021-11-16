@@ -1,187 +1,188 @@
-<nav class="
-top-0fixed
-z-50
-w-full
-flex flex-wrap
-items-center
-justify-between
-px-2
-py-3
-navbar-expand-lg
-bg-white
-shadow
-">
-<div class="
-  container
-  px-4
-  mx-auto
-  flex flex-wrap
-  items-center
-  justify-between
-">
-<div class="
+<nav
+  class="
+    top-0fixed
+    z-50
     w-full
-    relative
-    flex
+    flex flex-wrap
+    items-center
     justify-between
-    lg:w-auto lg:static lg:block lg:justify-star
-  ">
-  <a [routerLink]="['/']" class="
-      text-blueGray-700 text-sm
-      font-bold
-      leading-relaxed
-      inline-block
-      mr-4
-      py-2
-      whitespace-nowrap
-      upperca
-    " href="#">
-    Home
-  </a>
-  <button class="
-      cursor-pointer
-      text-xl
-      leading-none
-      px-3
-      py-1
-      border border-solid border-transparent
-      rounded
-      bg-transparent
-      block
-      lg:hidden
-      outline-none
-      focus:outline-none
-    " type="button">
-    <i class="fas fa-bars"></i>
-  </button>
-</div>
-<div class="lg:flex flex-grow items-center" id="example-navbar-warning">
-  <ul class="flex flex-col lg:flex-row list-none mr-auto">
-    <li class="flex items-center">
-      <a class="
-          hover:text-blueGray-500
-          text-blueGray-700
-          px-3
-          py-2
-          flex
-          items-center
-          text-xs
-          uppercase
+    px-2
+    py-3
+    navbar-expand-lg
+    bg-white
+    shadow
+  "
+>
+  <div
+    class="container px-4 mx-auto flex flex-wrap items-center justify-between"
+  >
+    <div
+      class="
+        w-full
+        relative
+        flex
+        justify-between
+        lg:w-auto lg:static lg:block lg:justify-star
+      "
+    >
+      <a
+        [routerLink]="['/']"
+        class="
+          text-blueGray-700 text-sm
           font-bold
-        " [routerLink]="['/crear-avion']">
-        <i class="
-            text-blueGray-400
-            far
-            fa-file-alt
-            text-lg
-            leading-lg
-            mr-2
-          "></i>
-        Avion
+          leading-relaxed
+          inline-block
+          mr-4
+          py-2
+          whitespace-nowrap
+          upperca
+        "
+        href="#"
+      >
+        Home
       </a>
-    </li>
-
-    <li class="flex items-center">
-      <a class="
-          hover:text-blueGray-500
-          text-blueGray-700
+      <button
+        class="
+          cursor-pointer
+          text-xl
+          leading-none
           px-3
-          py-2
-          flex
-          items-center
-          text-xs
-          uppercase
-          font-bold
-        " [routerLink]="['/gestionar-aerolinea']">
-        <i class="
-            text-blueGray-400
-            far
-            fa-file-alt
-            text-lg
-            leading-lg
-            mr-2
-          " ></i>
-        Aerolinia
-      </a>
-    </li>
-
-    <li class="flex items-center">
-      <a class="
-          hover:text-blueGray-500
-          text-blueGray-700
-          px-3
-          py-2
-          flex
-          items-center
-          text-xs
-          uppercase
-          font-bold
-        " >
-        <i class="
-            text-blueGray-400
-            far
-            fa-file-alt
-            text-lg
-            leading-lg
-            mr-2
-          "></i>
-        Aeropuerto
-      </a>
-    </li>
-
-    <li class="flex items-center">
-      <a class="
-          hover:text-blueGray-500
-          text-blueGray-700
-          px-3
-          py-2
-          flex
-          items-center
-          text-xs
-          uppercase
-          font-bold
-        " [routerLink]="['/gestionar-catalogoVuelo']">
-        <i class="
-            text-blueGray-400
-            far
-            fa-file-alt
-            text-lg
-            leading-lg
-            mr-2
-          "></i>
-        Catalogo de Vuelos
-      </a>
-    </li>
-  </ul>
-  <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
-    <li class="flex items-center"></li>
-
-    <li class="flex items-center">
-      <button class="
-          bg-red-600
-          text-white
-          active:bg-red-700
-          text-xs
-          font-bold
-          uppercase
-          px-4
-          py-2
+          py-1
+          border border-solid border-transparent
           rounded
-          shadow
-          hover:shadow-lg
+          bg-transparent
+          block
+          lg:hidden
           outline-none
           focus:outline-none
-          lg:mr-1 lg:mb-0
-          ml-3
-          mb-3
-          ease-linear
-          transition-all
-          duration-150
-        " type="button">
-        <i class="fas fa-arrow-alt-circle-down"></i> Iniciar Sesion
+        "
+        type="button"
+      >
+        <i class="fas fa-bars"></i>
       </button>
-    </li>
-  </ul>
-</div>
-</div>
+    </div>
+    <div class="lg:flex flex-grow items-center" id="example-navbar-warning">
+      <ul class="flex flex-col lg:flex-row list-none mr-auto">
+        <li class="flex items-center">
+          <a
+            class="
+              hover:text-blueGray-500
+              text-blueGray-700
+              px-3
+              py-2
+              flex
+              items-center
+              text-xs
+              uppercase
+              font-bold
+            "
+            [routerLink]="['/crear-avion']"
+          >
+            <i
+              class="text-blueGray-400 far fa-file-alt text-lg leading-lg mr-2"
+            ></i>
+            Avion
+          </a>
+        </li>
+
+        <li class="flex items-center">
+          <a
+            class="
+              hover:text-blueGray-500
+              text-blueGray-700
+              px-3
+              py-2
+              flex
+              items-center
+              text-xs
+              uppercase
+              font-bold
+            "
+            [routerLink]="['/gestionar-aerolinea']"
+          >
+            <i
+              class="text-blueGray-400 far fa-file-alt text-lg leading-lg mr-2"
+            ></i>
+            Aerolinia
+          </a>
+        </li>
+
+        <li class="flex items-center">
+          <a
+            class="
+              hover:text-blueGray-500
+              text-blueGray-700
+              px-3
+              py-2
+              flex
+              items-center
+              text-xs
+              uppercase
+              font-bold
+            "
+          >
+            <i
+              class="text-blueGray-400 far fa-file-alt text-lg leading-lg mr-2"
+            ></i>
+            Aeropuerto
+          </a>
+        </li>
+
+        <li class="flex items-center">
+          <a
+            class="
+              hover:text-blueGray-500
+              text-blueGray-700
+              px-3
+              py-2
+              flex
+              items-center
+              text-xs
+              uppercase
+              font-bold
+            "
+            [routerLink]="['/gestionar-catalogoVuelo']"
+          >
+            <i
+              class="text-blueGray-400 far fa-file-alt text-lg leading-lg mr-2"
+            ></i>
+            Catalogo de Vuelos
+          </a>
+        </li>
+      </ul>
+      <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
+        <li class="flex items-center"></li>
+
+        <li class="flex items-center">
+          <button
+            class="
+              bg-red-600
+              text-white
+              active:bg-red-700
+              text-xs
+              font-bold
+              uppercase
+              px-4
+              py-2
+              rounded
+              shadow
+              hover:shadow-lg
+              outline-none
+              focus:outline-none
+              lg:mr-1 lg:mb-0
+              ml-3
+              mb-3
+              ease-linear
+              transition-all
+              duration-150
+            "
+            [routerLink]="['/login-user']"
+            type="button"
+          >
+            <i class="fas fa-arrow-alt-circle-down"></i> Iniciar Sesion
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
