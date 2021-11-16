@@ -1,50 +1,126 @@
-<div class="col-md-12 mt-3">
-	<h1>{{page_title}}</h1>
-	<p *ngIf="status != 'success'">
-		Registrate como colaborador de la empresa!!!
-	</p>
+<div class="container max-w-full mx-auto md:py-24 px-28">
+  <div class="min-h-screen bg-blue-400 flex justify-center items-center">
+    <div class="absolute w-60 h-60 rounded-xl bg-blue-300 top-24 -left-16 z-0 transform rotate-45 hidden md:block">
+    </div>
+    <div class="absolute w-48 h-48 rounded-xl bg-blue-300 -bottom-6 -right-10 transform rotate-12 hidden md:block">
+    </div>
+  <div class="max-w-sm mx-auto py-12 px-20 bg-white rounded-2xl shadow-xl z-20">
+    <div class="relative flex flex-wrap">
+      <div class="w-full relative">
+        <div class="md:mt-6">
+          <div class="text-center font-semibold text-black">
+            {{ page_title }}
+          </div>
+          <hr class="mt-6 mb-5 border-b-3 border-blue-400" />
+          <form class="mt-8" #registerForm="ngForm"
+            (ngSubmit)="onSubmit(registerForm)">
+            <div class="mx-auto max-w-lg">
+              <div class="py-1">
+                <label for="username" class="px-1 text-sm text-gray-600">Nombre de usuario</label>
+                <input placeholder="Nombre de usuario" type="text" name="username" class="
+                    text-md
+                    block
+                    px-3
+                    py-2
+                    rounded-lg
+                    w-full
+                    bg-white
+                    border-2 border-gray-300
+                    placeholder-gray-600
+                    shadow-md
+                    focus:placeholder-gray-500
+                    focus:bg-white
+                    focus:border-gray-600
+                    focus:outline-none
+                  " #username="ngModel" [(ngModel)]="user.username" required pattern="[a-zA-Z]+" />
 
-	<div class="alert alert-success col-md-12 mt-3" *ngIf="status == 'success'">
-		El registro se ha completado correctamente, <a [routerLink]="['/login-user']">logeate aquí</a>
-	</div>
+                <small *ngIf="!username.valid && username.touched" class="invalid-feedback d-block text-red-500">
+                  El nombre de usuario no es válido
+                </small>
+              </div>
 
-	<div class="alert alert-danger col-md-12" *ngIf="status == 'error'">
-		El registro no se ha completado, puede que el correo ya este en uso!
-	</div>
+              <div class="py-1">
+                <span for="password" class="px-1 text-sm text-gray-600">Password</span>
+                <input placeholder="Contraseña" type="password" name="password" class="
+                    text-md
+                    block
+                    px-3
+                    py-2
+                    rounded-lg
+                    w-full
+                    bg-white
+                    border-2 border-gray-300
+                    placeholder-gray-600
+                    shadow-md
+                    focus:placeholder-gray-500
+                    focus:bg-white
+                    focus:border-gray-600
+                    focus:outline-none
+                  " #password="ngModel" [(ngModel)]="user.password" required />
 
-	<!--Formulario de registro-->
-	<form class="col-md-12 ml-0 pl-0" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
-		<div class="form-group">
-			<label for="username">Nombre de usuario</label>
-			<input type="text" name="username" class="form-control" maxlength="30" #username="ngModel" [(ngModel)]="user.username" required
-				pattern="[a-zA-Z]+">
+                <small *ngIf="!password.valid && password.touched" class="invalid-feedback d-block text-red-500">
+                  La contraseña no es válida
+                </small>
+              </div>
 
-			<small *ngIf="!username.valid && username.touched" class="invalid-feedback d-block">
-				El nombre de usuario no es válido
-			</small>
-		</div>
+              <div class="py-1">
+                <span for="idEmployee" class="px-1 text-sm text-gray-600">Cedula del empleado</span>
+                <input placeholder="#-####-####" type="text" name="idEmployee" class="
+                    text-md
+                    block
+                    px-3
+                    py-2
+                    rounded-lg
+                    w-full
+                    bg-white
+                    border-2 border-gray-300
+                    placeholder-gray-600
+                    shadow-md
+                    focus:placeholder-gray-500
+                    focus:bg-white
+                    focus:border-gray-600
+                    focus:outline-none
+                  " #idEmployee="ngModel" [(ngModel)]="user.idEmployee" required
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
 
-		<div class="form-group">
-			<label for="password">Contraseña</label>
-			<input type="password" name="password" class="form-control" #password="ngModel"
-				[(ngModel)]="user.password" required>
+                <small *ngIf="!idEmployee.valid && idEmployee.touched" class="invalid-feedback d-block text-red-500">
+                  La cedula no es válida
+                </small>
+              </div>
 
-			<small *ngIf="!password.valid && password.touched" class="invalid-feedback d-block">
-				La contraseña no es válida
-			</small>
-		</div>
+              <div class="alert alert-success col-md-12 mt-3" *ngIf="status == 'success'">
+                El registro se ha completado correctamente,
+                <a [routerLink]="['/login-user']">logeate aquí</a>
+              </div>
 
-		<div class="form-group">
-			<label for="idEmployee">Empleado</label>
-			<input type="idEmployee" name="idEmployee" class="form-control" #idEmployee="ngModel" [(ngModel)]="user.idEmployee" required
-				pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+              <div class="alert alert-danger col-md-12" *ngIf="status == 'error'">
+                El registro no se ha completado, puede que el correo ya este en
+                uso!
+              </div>
 
-			<small *ngIf="!idEmployee.valid && idEmployee.touched" class="invalid-feedback d-block">
-				El correo no es válido
-			</small>
-		</div>
-
-		<input type="submit" value="Registrarme" class="btn btn-success" [disabled]="registerForm.invalid" />
-	</form>
-
+              <input type="submit" value="Registrarme" class="
+                  mt-3
+                  text-xl
+                  font-semibold
+                  bg-gray-800
+                  w-full
+                  text-white
+                  rounded-2xl
+                  px-6
+                  py-3
+                  block
+                  shadow-xl
+                  hover:text-white hover:bg-blue-400
+                " [disabled]="registerForm.invalid" />
+            </div>
+          </form>
+        </div>
+        <div class="text-center mt-6">
+          <p class="mt-4 text-sm">Ya estas registrado? <span class="underline cursor-pointer hover:text-blue-600" [routerLink]="['/login-user']"> Inicia Sesion</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
