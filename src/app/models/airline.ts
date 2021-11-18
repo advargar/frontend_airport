@@ -1,6 +1,6 @@
 export class Airline {
   constructor(
-      public id: number,
+      public id: string,
       public name: string,
       public alias: string,
   ) { }

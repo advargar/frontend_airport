@@ -4,6 +4,7 @@ import { Airline } from '../../../models/airline';
 import { AirlineService } from '../../../services/airline.service';
 import { UserService } from '../../../services/user.service';
 import { global } from '../../../services/global';
+import { faTrash, faPlusCircle  } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-airline-detail',
@@ -18,6 +19,8 @@ export class AirlineDetailComponent implements OnInit {
   public airlines: any;
   public isShow : boolean = true;
   public identity;
+   Delete = faTrash;
+  Add = faPlusCircle;
 
   constructor(
     private _route: ActivatedRoute,

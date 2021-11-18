@@ -4,6 +4,14 @@
   </div>
 </div>
 
+<div class="alert alert-danger col-md-8" *ngIf="status == 'error'">
+	Los datos son incorrectos.
+</div>
+
+<div class="alert alert-danger col-md-8" *ngIf="status == 'success'">
+	Catalogo de Vuelo registrado exitosamente.
+</div>
+
 <div class=" mt-10 sm:mt-0 bg-no-repeat bg-cover" style="background-image:url(
  https://i.pinimg.com/originals/b0/81/3c/b0813c8a8467b3d94fa3012d4be444ff.jpg
  )">
@@ -40,6 +48,20 @@
               <div class="col-span-6 sm:col-span-4">
                 <label for="arrival" class="block text-sm font-medium text-gray-700">Destino</label>
                 <input type="text" name="arrival" id="arrival" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+              </div>
+
+              <div class="form-group col-md-6">
+                <h2>Elegir fecha para el vuelo</h2>
+                <div class="form-group">
+                  <div class="input-group">
+                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="dateSelected"
+                      [minDate]="minDate" ngbDatepicker #d="ngbDatepicker" required>
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary calendar" (click)="d.toggle()"
+                        type="button">📅</button>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div class="col-span-6">

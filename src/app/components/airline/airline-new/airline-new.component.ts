@@ -18,7 +18,7 @@ export class AirlineNewComponent implements OnInit {
     public _airlineService: AirlineService,
     public _UserService: UserService
   ) {
-    this.airline = new Airline(1, " "," ");
+    this.airline = new Airline(" ", " "," ");
     this.token = this._UserService.getToken();
   }
 
