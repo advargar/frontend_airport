@@ -1,23 +1,31 @@
-<section class="grid grid-cols-3 gap-4 z-1 ">
-  <div class="container w-2/3 h-screen flex items-center mx-auto ">
-    <div class="justify-center flex flex-wrap ">
-      <div class="w-full lg:w-12/12 px-4 -mt-24">
-        <div class="flex flex-wrap bg-gray-100">
-
-          <div class="w-full lg:w-4/12 px-4 ">
-            <div class="bg-white px-4 py-4 flex my-2 rounded-lg shadow" *ngFor="let airport of airports">
-            <h5 class="text-xl font-semibold pb-4 text-center">{{airport.name}}</h5>
-           <h3 class="text-xl font-semibold pb-4 text-center">{{airport.country}}, {{airport.city}}</h3>
-
-          </div>
+<section>
+  <div>
+    <div>
+      <div class="w-full">
+        <div class=" bg-gray-100">
+          <div class="container-aeropuerto">
+            <div
+              class="aero margin: 10px"
+              *ngFor="let airport of airports"
+            >
+              <blockquote class="shadow" >
+                <p class=" font-light mt-2 text-black">
+                  {{ airport.name }}, {{ airport.country }}, {{ airport.city }}
+                </p>
+                <br>                
+              </blockquote>
+            </div>
           </div>
         </div>
       </div>
-      <a class="bg-green-600 text-gray-400 hover:text-green-200  mx-2">
-        <button [routerLink]="['/registrar-aeropuerto']"  class="material-icons-outlined text-base">
-          <fa-icon [icon]="Add"></fa-icon>agregar aeropuerto</button>
+      <a class="bg-green-600 text-gray-400 hover:text-green-200 mx-2">
+        <button
+          [routerLink]="['/registrar-aeropuerto']"
+          class="material-icons-outlined text-base"
+        >
+          <fa-icon [icon]="Add"></fa-icon>agregar aeropuerto
+        </button>
       </a>
     </div>
   </div>
 </section>
-
