@@ -19,141 +19,17 @@
             bg-blue-600
           "
         >
-          <img
-            alt="..."
-            src="https://easbcn.com/wp-content/uploads/2021/02/que-es-el-piloto-automatico-de-un-avion-1210x423.jpg"
-            class="w-full align-middle rounded-t-lg"
-          />
-          <blockquote class="relative p-8 mb-4">
+          <blockquote class="relative p-8 mb-4" *ngFor="let pilot of pilots">
             <h4 class="text-xl font-bold text-white">
-              Pilotos de aviación
+              {{pilot.id}}
             </h4>
             <p class="text-md font-light mt-2 text-white">
-              Estas son las personas encargadas de brindarles un vuelo satisfactorio
-              y llevarlos hasta su destino.
+              {{pilot.idEmployee}}
             </p>
           </blockquote>
         </div>
       </div>
 
-      <div class="w-full md:w-6/12 px-4">
-        <div class="flex flex-wrap">
-          <div class="w-full md:w-6/12 px-4">
-            <div class="relative flex flex-col mt-4">
-
-              <div class="px-4 py-5 flex-auto">
-                <div
-                  class="
-                    text-blueGray-500
-                    p-3
-                    text-center
-                    inline-flex
-                    items-center
-                    justify-center
-                    w-12
-                    h-12
-                    mb-5
-                    shadow-lg
-                    rounded-full
-                    bg-white
-                  "
-                >
-                  <i class="fas fa-sitemap"></i>
-                </div>
-                <h6 class="text-xl mb-1 font-semibold">'Nombre del piloto'</h6>
-                <p class="mb-4 text-blueGray-500">
-                 Sale de 'nombre del aeropuerto' y es de la aerolinea 'nombre de la aerolinea'
-                </p>
-              </div>
-
-            </div>
-            <div class="relative flex flex-col min-w-0">
-              <div class="px-4 py-5 flex-auto">
-                <div
-                  class="
-                    text-blueGray-500
-                    p-3
-                    text-center
-                    inline-flex
-                    items-center
-                    justify-center
-                    w-12
-                    h-12
-                    mb-5
-                    shadow-lg
-                    rounded-full
-                    bg-white
-                  "
-                >
-                  <i class="fas fa-drafting-compass"></i>
-                </div>
-                <h6 class="text-xl mb-1 font-semibold">'Nombre del piloto'</h6>
-                <p class="mb-4 text-blueGray-500">
-                 Sale de 'nombre del aeropuerto' y es de la aerolinea 'nombre de la aerolinea'
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="w-full md:w-6/12 px-4">
-            <div class="relative flex flex-col min-w-0 mt-4">
-              <div class="px-4 py-5 flex-auto">
-                <div
-                  class="
-                    text-blueGray-500
-                    p-3
-                    text-center
-                    inline-flex
-                    items-center
-                    justify-center
-                    w-12
-                    h-12
-                    mb-5
-                    shadow-lg
-                    rounded-full
-                    bg-white
-                  "
-                >
-                  <i class="fas fa-newspaper"></i>
-                </div>
-               <h6 class="text-xl mb-1 font-semibold">'Nombre del piloto'</h6>
-                <p class="mb-4 text-blueGray-500">
-                 Sale de 'nombre del aeropuerto' y es de la aerolinea 'nombre de la aerolinea'
-                </p>
-              </div>
-            </div>
-
-            <div class="relative flex flex-col min-w-0">
-              <div class="px-4 py-5 flex-auto">
-                <div
-                  class="
-                    text-blueGray-500
-                    p-3
-                    text-center
-                    inline-flex
-                    items-center
-                    justify-center
-                    w-12
-                    h-12
-                    mb-5
-                    shadow-lg
-                    rounded-full
-                    bg-white
-                  "
-                >
-                  <i class="fas fa-file-alt"></i>
-                </div>
-               <h6 class="text-xl mb-1 font-semibold">'Nombre del piloto'</h6>
-                <p class="mb-4 text-blueGray-500">
-                 Sale de 'nombre del aeropuerto' y es de la aerolinea 'nombre de la aerolinea'
-                </p>
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-      </div>
     </div>
   </div>    <!-- Termina vista de Pilotos -->
   <hr class="my-6 border-gray-500" />
