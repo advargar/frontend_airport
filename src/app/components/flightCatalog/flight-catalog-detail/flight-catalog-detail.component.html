@@ -35,12 +35,12 @@ https://img3.wallspic.com/previews/5/4/2/4/6/164245/164245-airplane-flight-aircr
             <span class="text-gray-50 rounded-md px-2"
             [ngStyle]="{'bg-':flightCatalog.Estado === 'Active' ? 'green-700' : 'red-700'}" >{{flightCatalog.Estado}}</span>
           </td>
-          <td class="p-3 ">
+          <td class="p-3 " *ngIf="identity.role == 'ADMIN'">
             <a class="text-gray-400 hover:text-gray-100  mx-2">
               <button (click)="deleteflightCatalog(flightCatalog.id)" class="material-icons-outlined text-base">eliminar</button>
             </a>
           </td>
-          <td class="p-3 ">
+          <td class="p-3 " *ngIf="identity.role == 'ADMIN'">
             <a class="text-gray-400 hover:text-green-200  mx-2">
               <button [routerLink]="['/crear-catalogoVuelo']"  class="material-icons-outlined text-base">agregar</button>
             </a>
