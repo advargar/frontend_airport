@@ -1,189 +1,35 @@
-<section class="container mx-auto p-6 font-mono">
-  <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
-    <div class="w-full overflow-x-auto">
-      <table class="w-full">
-        <thead>
-          <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
-            <th class="px-4 py-3">Name</th>
-            <th class="px-4 py-3">Age</th>
-            <th class="px-4 py-3">Status</th>
-            <th class="px-4 py-3">Date</th>
+<div class="container w-full max-w-6xl mx-auto bg-white bg-cover mt-8 rounded"
+  style="background-image:url('https://www.nacion.com/resizer/KKBeqpR6_xxol6asPYBR74h0G14=/1200x0/center/middle/filters:quality(100)/arc-anglerfish-arc2-prod-gruponacion.s3.amazonaws.com/public/K43LGL44KJBQJLRTAG6MVQC3AU.jpg');
+   height: 75vh;">
+</div>
+<div class="container max-w-5xl mx-auto -mt-32">
+  <h6 class="text-6xl font-bold p-4 text-white text-left md:text-center">Vuelos</h6>
+  <p class="flex-grow font-bold text-white text-left md:text-center ">Revise toda la información de vuelos
+     en tiempo real</p>
+
+	<div class="col-span-12">
+		<div class="overflow-auto lg:overflow-visible ">
+
+      <p class="text text-sm font-bold p-2 w-1/5 bg-gray-800 text-gray-500 md:text-center">Vuelos con Destino a España</p>
+			<table class="table text-gray-400 border-separate space-y-6 text-sm" >
+				<thead class="bg-gray-800 text-gray-500">
+					<tr>
+						<th class="p-3">Pais</th>
+						<th class="p-3 text-left">Cuidad</th>
+						<th class="p-3 text-left">Fecha</th>
+					</tr>
+				</thead>
+				<tbody>
+            <tr *ngFor="let flight of flights" class="bg-gray-800">
+              <td>{{flight.country}}</td>
+              <td>{{flight.city}}</td>
+              <td>{{flight.assignedDate}}</td>
           </tr>
-        </thead>
-        <tbody class="bg-white">
-          <tr class="text-gray-700">
-            <td class="px-4 py-3 border">
-              <div class="flex items-center text-sm">
-                <div class="relative w-8 h-8 mr-3 rounded-full md:block">
-                  <img class="object-cover w-full h-full rounded-full" src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" loading="lazy" />
-                  <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
-                </div>
-                <div>
-                  <p class="font-semibold text-black">Sufyan</p>
-                  <p class="text-xs text-gray-600">Developer</p>
-                </div>
-              </div>
-            </td>
-            <td class="px-4 py-3 text-ms font-semibold border">22</td>
-            <td class="px-4 py-3 text-xs border">
-              <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> Acceptable </span>
-            </td>
-            <td class="px-4 py-3 text-sm border">6/4/2000</td>
-          </tr>
-          <tr class="text-gray-700">
-            <td class="px-4 py-3 border">
-              <div class="flex items-center text-sm">
-                <div class="relative w-8 h-8 mr-3 rounded-full">
-                  <img class="object-cover w-full h-full rounded-full" src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" loading="lazy" />
-                  <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
-                </div>
-                <div>
-                  <p class="font-semibold text-black">Stevens</p>
-                  <p class="text-xs text-gray-600">Programmer</p>
-                </div>
-              </div>
-            </td>
-            <td class="px-4 py-3 text-md font-semibold border">27</td>
-            <td class="px-4 py-3 text-xs border">
-              <span class="px-2 py-1 font-semibold leading-tight text-orange-700 bg-gray-100 rounded-sm"> Pending </span>
-            </td>
-            <td class="px-4 py-3 text-sm border">6/10/2020</td>
-          </tr>
-          <tr class="text-gray-700">
-            <td class="px-4 py-3 border">
-              <div class="flex items-center text-sm">
-                <div class="relative w-8 h-8 mr-3 rounded-full">
-                  <img class="object-cover w-full h-full rounded-full" src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" loading="lazy" />
-                  <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
-                </div>
-                <div>
-                  <p class="font-semibold">Nora</p>
-                  <p class="text-xs text-gray-600">Designer</p>
-                </div>
-              </div>
-            </td>
-            <td class="px-4 py-3 text-md font-semibold border">17</td>
-            <td class="px-4 py-3 text-xs border">
-              <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-sm"> Nnacceptable </span>
-            </td>
-            <td class="px-4 py-3 text-sm border">6/10/2020</td>
-          </tr>
-          <tr class="text-gray-700">
-            <td class="px-4 py-3 border">
-              <div class="flex items-center text-sm">
-                <div class="relative w-8 h-8 mr-3 rounded-full">
-                  <img class="object-cover w-full h-full rounded-full" src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" loading="lazy" />
-                  <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
-                </div>
-                <div>
-                  <p class="font-semibold">Ali</p>
-                  <p class="text-xs text-gray-600">Programmer</p>
-                </div>
-              </div>
-            </td>
-            <td class="px-4 py-3 border text-md font-semibold">23</td>
-            <td class="px-4 py-3 border text-xs">
-              <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> Acceptable </span>
-            </td>
-            <td class="px-4 py-3 border text-sm">6/10/2020</td>
-          </tr>
-          <tr class="text-gray-700">
-            <td class="px-4 py-3 border">
-              <div class="flex items-center text-sm">
-                <div class="relative w-8 h-8 mr-3 rounded-full">
-                  <img class="object-cover w-full h-full rounded-full" src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" loading="lazy" />
-                  <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
-                </div>
-                <div>
-                  <p class="font-semibold">Khalid</p>
-                  <p class="text-xs text-gray-600">Designer</p>
-                </div>
-              </div>
-            </td>
-            <td class="px-4 py-3 border text-md font-semibold">20</td>
-            <td class="px-4 py-3 border text-xs">
-              <span class="px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-sm"> Pending </span>
-            </td>
-            <td class="px-4 py-3 border text-sm">6/10/2020</td>
-          </tr>
-          <tr class="text-gray-700">
-            <td class="px-4 py-3 border">
-              <div class="flex items-center text-sm">
-                <div class="relative w-8 h-8 mr-3 rounded-full">
-                  <img class="object-cover w-full h-full rounded-full" src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" loading="lazy" />
-                  <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
-                </div>
-                <div>
-                  <p class="font-semibold">Nasser</p>
-                  <p class="text-xs text-gray-600">Pen Tester</p>
-                </div>
-              </div>
-            </td>
-            <td class="px-4 py-3 border text-md font-semibold">29</td>
-            <td class="px-4 py-3 border text-xs">
-              <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> Acceptable </span>
-            </td>
-            <td class="px-4 py-3 border text-sm">6/10/2020</td>
-          </tr>
-          <tr class="text-gray-700">
-            <td class="px-4 py-3 border">
-              <div class="flex items-center text-sm">
-                <div class="relative w-8 h-8 mr-3 rounded-full">
-                  <img class="object-cover w-full h-full rounded-full" src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" loading="lazy" />
-                  <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
-                </div>
-                <div>
-                  <p class="font-semibold">Mohammed</p>
-                  <p class="text-xs text-gray-600">Web Designer</p>
-                </div>
-              </div>
-            </td>
-            <td class="px-4 py-3 border text-md font-semibold">38</td>
-            <td class="px-4 py-3 border text-xs">
-              <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> Acceptable </span>
-            </td>
-            <td class="px-4 py-3 border text-sm">6/10/2020</td>
-          </tr>
-          <tr class="text-gray-700">
-            <td class="px-4 py-3 border">
-              <div class="flex items-center text-sm">
-                <div class="relative w-8 h-8 mr-3 rounded-full">
-                  <img class="object-cover w-full h-full rounded-full" src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" loading="lazy" />
-                  <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
-                </div>
-                <div>
-                  <p class="font-semibold">Saad</p>
-                  <p class="text-xs text-gray-600">Data</p>
-                </div>
-              </div>
-            </td>
-            <td class="px-4 py-3 border text-md font-semibold">19</td>
-            <td class="px-4 py-3 border text-xs">
-              <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> Acceptable </span>
-            </td>
-            <td class="px-4 py-3 border text-sm">6/10/2020</td>
-          </tr>
-          <tr class="text-gray-700">
-            <td class="px-4 py-3 border">
-              <div class="flex items-center text-sm">
-                <div class="relative w-8 h-8 mr-3 rounded-full">
-                  <img class="object-cover w-full h-full rounded-full" src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" loading="lazy" />
-                  <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
-                </div>
-                <div>
-                  <p class="font-semibold">Sami</p>
-                  <p class="text-xs text-gray-600">Developer</p>
-                </div>
-              </div>
-            </td>
-            <td class="px-4 py-3 border text-md font-semibold">21</td>
-            <td class="px-4 py-3 border text-xs">
-              <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> Acceptable </span>
-            </td>
-            <td class="px-4 py-3 border text-sm">6/10/2020</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+
+</div>

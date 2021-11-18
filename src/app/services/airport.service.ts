@@ -11,7 +11,7 @@ export class AirportService{
  url = global;
  constructor(private _http: HttpClient){}
 
- getAirport(): Observable<Airport []>{
-   return this._http.get<Airport []>(this.url + 'airport/');
+ getAirports(): Observable<any>{
+   return this._http.get(this.url + 'airport');
  }
 }

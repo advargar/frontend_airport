@@ -6,8 +6,8 @@ import {global} from './global';
 @Injectable()
 export class UserService {
 	public url: string;
-	public identity: null | undefined;
-	public token: string | null | undefined;
+	public identity;
+	public token;
 
 	constructor(
 		public _http: HttpClient
