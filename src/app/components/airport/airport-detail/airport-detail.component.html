@@ -4,9 +4,9 @@
       <div class="w-full lg:w-12/12 px-4 -mt-24">
         <div class="flex flex-wrap bg-gray-100">
 
-          <div class="w-full lg:w-4/12 px-4 " >
-            <h5 class="text-xl font-semibold pb-4 text-center">airport.name</h5>
-           <h3 class="text-xl font-semibold pb-4 text-center">Cuidad y Pais</h3>
+          <div class="w-full lg:w-4/12 px-4 " *ngFor="let airport of airports">
+            <h5 class="text-xl font-semibold pb-4 text-center">{{airport.name}}</h5>
+           <h3 class="text-xl font-semibold pb-4 text-center">{{airport.country}}, {{airport.city}}</h3>
 
           </div>
         </div>

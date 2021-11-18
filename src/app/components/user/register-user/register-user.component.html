@@ -32,7 +32,7 @@
                     focus:bg-white
                     focus:border-gray-600
                     focus:outline-none
-                  " #username="ngModel" [(ngModel)]="user.username" required pattern="[a-zA-Z]+" />
+                  " #username="ngModel" [(ngModel)]="user.username" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
 
                 <small *ngIf="!username.valid && username.touched" class="invalid-feedback d-block text-red-500">
                   El nombre de usuario no es válido
@@ -65,7 +65,7 @@
 
               <div class="py-1">
                 <span for="idEmployee" class="px-1 text-sm text-gray-600">Cedula del empleado</span>
-                <input placeholder="#-####-####" type="text" name="idEmployee" class="
+                <input placeholder="#" type="text" name="idEmployee" class="
                     text-md
                     block
                     px-3
@@ -80,8 +80,7 @@
                     focus:bg-white
                     focus:border-gray-600
                     focus:outline-none
-                  " #idEmployee="ngModel" [(ngModel)]="user.idEmployee" required
-                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
+                  " #idEmployee="ngModel" [(ngModel)]="user.idEmployee" required/>
 
                 <small *ngIf="!idEmployee.valid && idEmployee.touched" class="invalid-feedback d-block text-red-500">
                   La cedula no es válida

@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Airline } from '../../../models/airline';
 import { AirlineService } from '../../../services/airline.service';
+import { UserService } from '../../../services/user.service';
 import { global } from '../../../services/global';
 
 @Component({
   selector: 'app-airline-detail',
   templateUrl: './airline-detail.component.html',
   styleUrls: ['./airline-detail.component.css'],
-  providers: [AirlineService]
+  providers: [AirlineService, UserService]
 })
 export class AirlineDetailComponent implements OnInit {
   public page_title: string;
@@ -16,14 +17,16 @@ export class AirlineDetailComponent implements OnInit {
   public airline: Airline | undefined;
   public airlines: any;
   public isShow : boolean = true;
-  filterCategory = '';
+  public identity;
 
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,
     private _airlineService: AirlineService,
+    private _userService: UserService
   ) {
     this.url = global.url;
+    this.identity = this._userService.getIdentity();
     this.page_title = 'Listado de aerolineas';
    }
 
