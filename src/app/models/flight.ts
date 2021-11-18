@@ -1,12 +1,12 @@
 export class Flight{
   constructor(
-    public id: number,
-    public departure: number,
-    public arrival: number,
+    public id: string,
+    public departure: string,
+    public arrival: string,
     public assignedDate: string,
-    public passengers: number,
-    public pilot: number,
-    public coPilot: number,
-    public airplane: number,
+    public passengers: string,
+    public pilot: string,
+    public coPilot: string,
+    public airplane: string,
   ){ }
 }

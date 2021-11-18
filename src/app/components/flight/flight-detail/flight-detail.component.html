@@ -24,11 +24,16 @@
               <td>{{flight.country}}</td>
               <td>{{flight.city}}</td>
               <td>{{flight.assignedDate}}</td>
+
           </tr>
 				</tbody>
 			</table>
 		</div>
 	</div>
+
+  <a  *ngIf="identity.role == 'ROLE_EMPLOYEE'" class="text-gray-400 hover:text-green-200  mx-2">
+    <button [routerLink]="['/crear-vuelo']"  class="material-icons-outlined text-base">agregar vuelo</button>
+  </a>
 
 
 

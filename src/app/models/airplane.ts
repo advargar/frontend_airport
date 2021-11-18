@@ -1,9 +1,9 @@
 export class Airplane{
   constructor(
     public id: number,
-    public airline: number,
+    public airline: string,
     public model: string,
     public desing: string,
-    public capacity: number,
+    public capacity: string,
   ){ }
 }
