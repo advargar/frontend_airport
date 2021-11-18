@@ -30,8 +30,9 @@ export class EmployeeDetailComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.getEmployees();
   }
-  getAirports(){
+  getEmployees(){
     this._employeeService.getEmployees().subscribe(
       response => {
         if (response.status == 'success') {

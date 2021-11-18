@@ -8,11 +8,14 @@ import { global } from './global';
 providedIn: 'root'
 })
 export class PilotService{
- url = global;
- constructor(private _http: HttpClient){}
+  public url: string;
+ constructor(private _http: HttpClient){
+   this.url = global.url;
+ }
 
  getPilots(): Observable<any>{
-   return this._http.get(this.url + 'pilot');
+  let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+  return this._http.get(this.url + 'pilot', {headers: headers});
  }
  create(token, pilot): Observable<any> {
   let json = JSON.stringify(pilot);

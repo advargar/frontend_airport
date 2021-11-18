@@ -30,9 +30,10 @@ export class PilotDetailComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.getPilots();
   }
 
-  getAirports(){
+  getPilots(){
     this._pilotService.getPilots().subscribe(
       response => {
         if (response.status == 'success') {

@@ -8,11 +8,17 @@ import { global } from './global';
 providedIn: 'root'
 })
 export class FlightService{
- url = global;
- constructor(private _http: HttpClient){}
+  public url: string;
+
+ constructor(
+   private _http: HttpClient
+   ){
+  this.url = global.url;
+}
 
  getFlights(): Observable<any>{
-   return this._http.get(this.url + 'flight');
+  let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+  return this._http.get(this.url + 'flight', {headers: headers});
  }
 
  getFlightOffers(flight): Observable<any>{

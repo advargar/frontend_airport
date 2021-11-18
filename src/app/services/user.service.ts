@@ -19,7 +19,7 @@ export class UserService {
 		return "Hola mundo desde un servicio!!";
 	}
 
-	register(user: any): Observable<any>{
+	register(user): Observable<any>{
 		let json = JSON.stringify(user);
 		let params = 'json='+json;
 

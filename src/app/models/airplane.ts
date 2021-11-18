@@ -1,6 +1,6 @@
 export class Airplane{
   constructor(
-    public id: number,
+    public id: string,
     public airline: string,
     public model: string,
     public desing: string,

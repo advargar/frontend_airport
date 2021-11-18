@@ -8,11 +8,17 @@ import { global } from './global';
 providedIn: 'root'
 })
 export class AirportService{
- url = global;
- constructor(private _http: HttpClient){}
+  public url: string;
+
+ constructor(
+   private _http: HttpClient
+   ){
+  this.url = global.url;
+}
 
  getAirports(): Observable<any>{
-   return this._http.get(this.url + 'airport');
+  let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+   return this._http.get(this.url + 'airport', {headers: headers});
  }
 
  getAirportEmployee(airportId): Observable<any>{

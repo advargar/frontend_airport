@@ -32,7 +32,7 @@ export class FlightDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.isShow  = false;
-    this.getdestinyFly('España');
+    this.getFlights();
   }
 
   getFlights(){
