@@ -37,12 +37,16 @@ https://img3.wallspic.com/previews/5/4/2/4/6/164245/164245-airplane-flight-aircr
           </td>
           <td class="p-3 ">
             <a class="text-gray-400 hover:text-gray-100  mx-2">
-              <button (click)="deleteflightCatalog(flightCatalog.id)" class="material-icons-outlined text-base">eliminar</button>
+              <button (click)="deleteflightCatalog(flightCatalog.id)" class="material-icons-outlined text-base">
+                <fa-icon [icon]="Delete"></fa-icon>
+              </button>
             </a>
           </td>
           <td class="p-3 ">
-            <a class="text-gray-400 hover:text-green-200  mx-2">
-              <button [routerLink]="['/crear-catalogoVuelo']"  class="material-icons-outlined text-base">agregar</button>
+            <a class="text-green-600 hover:text-green-200  mx-2">
+              <button [routerLink]="['/crear-catalogoVuelo']"  class="material-icons-outlined text-base">
+                <fa-icon [icon]="Add"></fa-icon>
+              </button>
             </a>
           </td>
         </tr>

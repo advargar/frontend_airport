@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { EmployeeService } from '../../../services/employee.service';
 import { UserService } from '../../../services/user.service';
 import { global } from '../../../services/global';
+import { faTrash, faPlusCircle  } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-employee-detail',
@@ -17,6 +18,9 @@ export class EmployeeDetailComponent implements OnInit {
   public identity;
   public token;
   public isShow : boolean = true;
+
+  Delete = faTrash;
+  Add = faPlusCircle;
 
   constructor(
     private _route: ActivatedRoute,
