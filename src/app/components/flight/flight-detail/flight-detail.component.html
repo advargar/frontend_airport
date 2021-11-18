@@ -11,7 +11,7 @@
 		<div class="overflow-auto lg:overflow-visible ">
 
       <p class="text text-sm font-bold p-2 w-1/5 bg-gray-800 text-gray-500 md:text-center">Vuelos con Destino a España</p>
-			<table class="table text-gray-400 border-separate space-y-6 text-sm" >
+			<table class="table text-gray-400 border-separate space-y-6 text-sm" *ngFor="let flight of flights" >
 				<thead class="bg-gray-800 text-gray-500">
 					<tr>
 						<th class="p-3">Pais</th>
@@ -20,7 +20,7 @@
 					</tr>
 				</thead>
 				<tbody>
-            <tr *ngFor="let flight of flights" class="bg-gray-800">
+            <tr class="bg-gray-800">
               <td>{{flight.country}}</td>
               <td>{{flight.city}}</td>
               <td>{{flight.assignedDate}}</td>
