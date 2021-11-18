@@ -15,6 +15,8 @@ import { global } from '../../../services/global';
 export class FlightDetailComponent implements OnInit {
   public url: string;
   public flights: any;
+  public flightsPrice: any;
+  public flightsOffers;
   public identity;
   public token;
   public isShow : boolean = true;
@@ -32,7 +34,9 @@ export class FlightDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.isShow  = false;
-    this.getFlights();
+    this.getdestinyFly('España');
+    this.getFlightPrice('España');
+    this.getFlightOffers(['Costa Rica', 2000]);
   }
 
   getFlights(){
@@ -52,7 +56,7 @@ export class FlightDetailComponent implements OnInit {
     this._flightService.getFlightOffers(form).subscribe(
       response => {
         if (response.status == 'success') {
-          this.flights = response.data;
+          this.flightsOffers = response.data;
         }
       },
       error => {
@@ -65,7 +69,7 @@ export class FlightDetailComponent implements OnInit {
     this._flightService.getFlightPriceCountry(country).subscribe(
       response => {
         if (response.status == 'success') {
-          this.flights = response.data;
+          this.flightsPrice = response.data;
         }
       },
       error => {

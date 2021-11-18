@@ -42,6 +42,7 @@ export class FlightCatalogDetailComponent implements OnInit {
       response =>{
         if(response.status = 'success'){
           this.flightCatalogs =response.data;
+          console.log(this.identity);
         }
       },
       error =>{

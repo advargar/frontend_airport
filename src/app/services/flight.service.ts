@@ -24,29 +24,33 @@ export class FlightService{
  getFlightOffers(flight): Observable<any>{
   let json = JSON.stringify(flight);
   let params = "json=" + json;
+  let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
 
-  return this._http.get(this.url + 'flight/oferts' + params);
+  return this._http.get(this.url + 'flight/oferts' + params, {headers: headers});
 }
 
 getFlightPriceCountry(country): Observable<any>{
   let json = JSON.stringify(country);
   let params = "json=" + json;
+  let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
 
-  return this._http.get(this.url + 'flight/country' + params);
+  return this._http.get(this.url + 'flight/country' + params, {headers: headers});
 }
 
 getPilotAirline(alias): Observable<any>{
   let json = JSON.stringify(alias);
   let params = "json=" + json;
+  let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
 
-  return this._http.get(this.url + 'flight/pilot' + params);
+  return this._http.get(this.url + 'flight/pilot' + params, {headers: headers});
 }
 
 getdestinyFly(country): Observable<any>{
   let json = JSON.stringify(country);
   let params = "json=" + json;
+  let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
 
-  return this._http.get(this.url + 'flight/destiny' + params);
+  return this._http.get(this.url + 'flight/destiny' + params, {headers: headers});
 }
 
  create(token, flight): Observable<any> {

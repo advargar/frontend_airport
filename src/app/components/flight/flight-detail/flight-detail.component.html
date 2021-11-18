@@ -10,7 +10,11 @@
 	<div class="col-span-12">
 		<div class="overflow-auto lg:overflow-visible ">
 
-      <p class="text text-sm font-bold p-2 w-1/5 bg-gray-800 text-gray-500 md:text-center">Vuelos con Destino a España</p>
+      <div class="px-4 py-4 flex my-2 rounded-lg shadow" *ngFor="let flight of flightsPrice">
+        <p class="text text-sm font-bold p-2 w-1/5 bg-gray-800 text-gray-500 md:text-center">Vuelos con Destino a España</p>
+       <h3 class="text-xl font-semibold pb-4 text-center">Precio promedio, {{flight.promedio}}</h3>
+
+      </div>
 			<table class="table text-gray-400 border-separate space-y-6 text-sm">
 				<thead class="bg-gray-800 text-gray-500">
 					<tr>
@@ -35,6 +39,30 @@
     <button [routerLink]="['/crear-vuelo']"  class="material-icons-outlined text-base">agregar vuelo</button>
   </a>
 
+	<div class="col-span-12">
+		<div class="overflow-auto lg:overflow-visible ">
 
+      <p class="text text-sm font-bold p-2 w-1/5 bg-gray-800 text-gray-500 md:text-center">Oferta de Vuelos a Costa Rica</p>
+			<table class="table text-gray-400 border-separate space-y-6 text-sm">
+				<thead class="bg-gray-800 text-gray-500">
+					<tr>
+						<th class="p-3">Salida</th>
+						<th class="p-3 text-left">Precio del tiquete</th>
+						<th class="p-3 text-left">Tiempo estimado</th>
+            <th class="p-3 text-left">Aerolinea</th>
+					</tr>
+				</thead>
+				<tbody>
+            <tr class="bg-gray-800 text-gray-500"  *ngFor="let flight of flightsOffers" >
+              <td>{{flight.departure}}</td>
+              <td>{{flight.price_ticket}}</td>
+              <td>{{flight.estimated_time}}</td>
+              <td>{{flight.airline_name}}</td>
+
+          </tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 
 </div>
