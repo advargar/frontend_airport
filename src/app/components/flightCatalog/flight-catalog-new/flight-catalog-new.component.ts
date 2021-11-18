@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { flightCatalogService } from '../../../services/flightCatalog.service';
 import { Flight_Catalog } from '../../../models/flightCatalog';
 import { UserService } from '../../../services/user.service';
+import { NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-flight-catalog-new',
@@ -14,19 +15,26 @@ export class FlightCatalogNewComponent implements OnInit {
   public flight_Catalog: Flight_Catalog;
   public status;
   public token;
+  public minDate;
+  dateSelected;
+
+	date: { year: number; month: number; } | undefined;
+
   constructor(
     public _flightCatalogService: flightCatalogService,
-    public _UserService: UserService
+    public _UserService: UserService,
+    private calendar: NgbCalendar,
   ) {
     this.flight_Catalog = new Flight_Catalog(" ", " "," ", " ", "", "", "");
     this.token = this._UserService.getToken();
+    this.minDate = this.calendar.getToday();
   }
 
 
   ngOnInit(): void {
   }
   onSubmit(form){
-
+    this.flight_Catalog.estimated_time = this.dateSelected.year + "-" + this.dateSelected.month + "-" + this.dateSelected.day;
     this._flightCatalogService.create(this.token,this.flight_Catalog).subscribe(
       response =>{
         if(response.status == 'success'){
