@@ -4,7 +4,7 @@ import { Airline } from '../../../models/airline';
 import { AirlineService } from '../../../services/airline.service';
 import { UserService } from '../../../services/user.service';
 import { global } from '../../../services/global';
-import { faTrash, faPlusCircle  } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faPlusCircle, faEdit } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-airline-detail',
@@ -15,12 +15,14 @@ import { faTrash, faPlusCircle  } from '@fortawesome/free-solid-svg-icons';
 export class AirlineDetailComponent implements OnInit {
   public page_title: string;
   public url: string;
-  public airline: Airline | undefined;
-  public airlines: any;
+  //public airline: Airline;
+  public airlines;
+  public token;
   public isShow : boolean = true;
   public identity;
-   Delete = faTrash;
+  Delete = faTrash;
   Add = faPlusCircle;
+  Edit = faEdit;
 
   constructor(
     private _route: ActivatedRoute,
@@ -31,6 +33,7 @@ export class AirlineDetailComponent implements OnInit {
     this.url = global.url;
     this.identity = this._userService.getIdentity();
     this.page_title = 'Listado de aerolineas';
+    this.token = this._userService.getToken();
    }
 
   ngOnInit(): void {
@@ -43,6 +46,17 @@ export class AirlineDetailComponent implements OnInit {
         if (response.status == 'success') {
           this.airlines = response.data;
         }
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+
+  deleteAirline(id) {
+    this._airlineService.delete(this.token, id).subscribe(
+      response => {
+        this.getAirlines();
       },
       error => {
         console.log(error);

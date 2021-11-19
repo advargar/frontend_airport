@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AirportService } from '../../../services/airport.service';
 import { Airport } from '../../../models/airport';
 import { UserService } from '../../../services/user.service';
@@ -15,10 +16,11 @@ export class AirportNewComponent implements OnInit {
   public status;
   public token;
   constructor(
+    private _router: Router,
     public _airportService: AirportService,
     public _UserService: UserService
   ) {
-    this.airport = new Airport(1, " "," ", " ");
+    this.airport = new Airport("", " "," ", " ");
     this.token = this._UserService.getToken();
   }
 
@@ -30,7 +32,7 @@ export class AirportNewComponent implements OnInit {
       response =>{
         if(response.status == 'success'){
           this.status = response.status;
-          form.reset();
+          this._router.navigate(['inicio']);
         }else{
           this.status = 'error';
         }

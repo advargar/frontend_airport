@@ -4,14 +4,6 @@
   </div>
 </div>
 
-<div class="alert alert-danger col-md-8" *ngIf="status == 'error'">
-	Los datos son incorrectos.
-</div>
-
-<div class="alert alert-danger col-md-8" *ngIf="status == 'success'">
-	Aeropuerto registrado exitosamente.
-</div>
-
 <div class=" mt-10 sm:mt-0">
   <div class="md:grid md:grid-cols-3 md:gap-6">
     <div class="md:col-span-1">
@@ -20,6 +12,14 @@
         <p class="mt-1 text-sm text-gray-600">
           Completa los campos requeridos para añadir un Aeropuerto.
         </p>
+      </div>
+
+      <div class="bg-red-100 border border-red-400 text-red-700 mt-10 px-4 py-3 rounded relative" role="alert" *ngIf="status == 'error'">
+        <strong class="font-bold">Error!</strong>
+        <span class="block sm:inline"> Datos repetidos o los datos son incorrectos.</span>
+        <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+          <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+        </span>
       </div>
     </div>
 
@@ -30,21 +30,21 @@
             <div class="grid grid-cols-6 gap-6">
               <div class="col-span-6 sm:col-span-3">
                 <label for="id" class="block text-sm font-medium text-gray-700">Codigo del Aeropuerto</label>
-                <input type="text" name="id" id="id" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <input type="text" name="id" #id="ngModel" [(ngModel)]="airport.id" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
               <div class="col-span-6 sm:col-span-3">
                 <label for="name" class="block text-sm font-medium text-gray-700">Nombre</label>
-                <input type="text" name="name" id="name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <input type="text" name="name" #name="ngModel" [(ngModel)]="airport.name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
 
               <div class="col-span-6 sm:col-span-4">
                 <label for="city" class="block text-sm font-medium text-gray-700">Cuidad</label>
-                <input type="text" name="city" id="city" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <input type="text" name="city" #city="ngModel" [(ngModel)]="airport.city" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
 
               <div class="col-span-6">
                 <label for="country" class="block text-sm font-medium text-gray-700">Pais</label>
-                <input type="text" name="country" id="country" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <input type="text" name="country" #country="ngModel" [(ngModel)]="airport.country" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
 
             </div>

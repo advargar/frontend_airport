@@ -65,4 +65,15 @@ export class AirportDetailComponent implements OnInit {
       }
     );
   }
+
+  deleteAirport(id) {
+    this._airportService.delete(this.token, id).subscribe(
+      response => {
+        this.getAirports();
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
 }

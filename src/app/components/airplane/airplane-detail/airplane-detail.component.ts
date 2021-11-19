@@ -4,7 +4,7 @@ import { Airport } from '../../../models/airport';
 import { AirplaneService } from '../../../services/airplane.service';
 import { UserService } from '../../../services/user.service';
 import { global } from '../../../services/global';
-import { faTrash, faPlusCircle  } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faPlusCircle, faEdit } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-airplane-detail',
@@ -21,6 +21,7 @@ export class AirplaneDetailComponent implements OnInit {
   public isShow : boolean = true;
   Delete = faTrash;
   Add = faPlusCircle;
+  Edit = faEdit;
 
   constructor(
     private _route: ActivatedRoute,
@@ -43,6 +44,17 @@ export class AirplaneDetailComponent implements OnInit {
         if (response.status == 'success') {
           this.airplanes = response.data;
         }
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+
+  deleteAirplane(id) {
+    this._airplaneService.delete(this.token, id).subscribe(
+      response => {
+        this.getAirplanes();
       },
       error => {
         console.log(error);

@@ -36,8 +36,8 @@ https://img3.wallspic.com/previews/5/4/2/4/6/164245/164245-airplane-flight-aircr
             [ngStyle]="{'bg-':flightCatalog.Estado === 'Active' ? 'green-700' : 'red-700'}" >{{flightCatalog.Estado}}</span>
           </td>
           <td class="p-3 ">
-            <a class="text-gray-400 hover:text-gray-100  mx-2">
-              <button (click)="deleteflightCatalog(flightCatalog.id)" class="material-icons-outlined text-base">
+            <a class="text-gray-400 hover:text-red-500  mx-2">
+              <button (click)="deleteflightCatalog(flightCatalog.id)" class="material-icons-outlined text-base" *ngIf="token != null">
                 <fa-icon [icon]="Delete"></fa-icon>
               </button>
             </a>
