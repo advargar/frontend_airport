@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PilotService } from '../../../services/pilot.service';
 import { Pilot } from '../../../models/pilot';
 import { UserService } from '../../../services/user.service';
@@ -15,10 +16,11 @@ export class PilotNewComponent implements OnInit {
   public status;
   public token;
   constructor(
+    private _router: Router,
     public _pilotService: PilotService,
     public _UserService: UserService
   ) {
-    this.pilot = new Pilot(1, " ");
+    this.pilot = new Pilot("", " ");
     this.token = this._UserService.getToken();
   }
 
@@ -26,12 +28,11 @@ export class PilotNewComponent implements OnInit {
   }
 
   onSubmit(form){
-
     this._pilotService.create(this.token,this.pilot).subscribe(
       response =>{
         if(response.status == 'success'){
           this.status = response.status;
-          form.reset();
+          this._router.navigate(['inicio']);
         }else{
           this.status = 'error';
         }

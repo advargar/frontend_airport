@@ -17,7 +17,7 @@ export class PilotDetailComponent implements OnInit {
   public pilots: any;
   public identity;
   public token;
-  public isShow : boolean = true;
+  public status;
   Delete = faTrash;
   Add = faPlusCircle;
 
@@ -42,6 +42,17 @@ export class PilotDetailComponent implements OnInit {
         if (response.status == 'success') {
           this.pilots = response.data;
         }
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+
+  deletePilot(id) {
+    this._pilotService.delete(this.token, id).subscribe(
+      response => {
+        this.getPilots();
       },
       error => {
         console.log(error);
