@@ -1,70 +1,79 @@
-<div class="container w-full max-w-6xl mx-auto bg-white bg-cover mt-8 rounded"
-  style="background-image:url('https://www.nacion.com/resizer/KKBeqpR6_xxol6asPYBR74h0G14=/1200x0/center/middle/filters:quality(100)/arc-anglerfish-arc2-prod-gruponacion.s3.amazonaws.com/public/K43LGL44KJBQJLRTAG6MVQC3AU.jpg');
-   height: 75vh;">
-</div>
+<!--image-->
+<div
+  class="container w-full max-w-6xl mx-auto bg-white bg-cover mt-8 rounded"
+  style="
+    background-image: url('https://www.nacion.com/resizer/KKBeqpR6_xxol6asPYBR74h0G14=/1200x0/center/middle/filters:quality(100)/arc-anglerfish-arc2-prod-gruponacion.s3.amazonaws.com/public/K43LGL44KJBQJLRTAG6MVQC3AU.jpg');
+    height: 75vh;
+  "
+></div>
+
+<!--Container-->
 <div class="container max-w-5xl mx-auto -mt-32">
-  <h6 class="text-6xl font-bold p-4 text-white text-left md:text-center">Vuelos</h6>
-  <p class="flex-grow font-bold text-white text-left md:text-center ">Revise toda la información de vuelos
-     en tiempo real</p>
-
-	<div class="col-span-12">
-		<div class="overflow-auto lg:overflow-visible ">
-
-      <div class="px-4 py-4 flex my-2 rounded-lg shadow" *ngFor="let flight of flightsPrice">
-        <p class="text text-sm font-bold p-2 w-1/5 bg-gray-800 text-gray-500 md:text-center">Vuelos con Destino a España</p>
-       <h3 class="text-xl font-semibold pb-4 text-center">Precio promedio, {{flight.promedio}}</h3>
-
-      </div>
-			<table class="table text-gray-400 border-separate space-y-6 text-sm">
-				<thead class="bg-gray-800 text-gray-500">
-					<tr>
-						<th class="p-3">Pais</th>
-						<th class="p-3 text-left">Cuidad</th>
-						<th class="p-3 text-left">Fecha</th>
-					</tr>
-				</thead>
-				<tbody>
-            <tr class="bg-gray-800 text-gray-500"  *ngFor="let flight of flights" >
-              <td>{{flight.country}}</td>
-              <td>{{flight.city}}</td>
-              <td>{{flight.assignedDate}}</td>
-
-          </tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-
-  <a class="bg-green-600 text-gray-400 hover:text-green-200  mx-2">
-    <button [routerLink]="['/crear-vuelo']"  class="material-icons-outlined text-base">
-      <fa-icon [icon]="Add">Agregar vuelo</fa-icon>
-    </button>
-  </a>
-
-	<div class="col-span-12">
-		<div class="overflow-auto lg:overflow-visible ">
-
-      <p class="text text-sm font-bold p-2 w-1/5 bg-gray-800 text-gray-500 md:text-center">Oferta de Vuelos a Costa Rica</p>
-			<table class="table text-gray-400 border-separate space-y-6 text-sm">
-				<thead class="bg-gray-800 text-gray-500">
-					<tr>
-						<th class="p-3">Salida</th>
-						<th class="p-3 text-left">Precio del tiquete</th>
-						<th class="p-3 text-left">Tiempo estimado</th>
-            <th class="p-3 text-left">Aerolinea</th>
-					</tr>
-				</thead>
-				<tbody>
-            <tr class="bg-gray-800 text-gray-500"  *ngFor="let flight of flightsOffers" >
-              <td>{{flight.departure}}</td>
-              <td>{{flight.price_ticket}}</td>
-              <td>{{flight.estimated_time}}</td>
-              <td>{{flight.airline_name}}</td>
-
-          </tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-
+  <h6 class="text-6xl font-bold p-4 text-white text-left md:text-center">
+    Vuelos
+  </h6>
+  <p class="flex-grow font-bold text-white text-left md:text-center">
+    Esta es la lista de los vuelos que estan disponibles.
+  </p>
+  <div class="border rounded-t-lg justify-center bg-gray-300">
+    <a class=" ml-10 mt-3 text-gray-400 hover:text-green-200 mx-2">
+      <button
+        [routerLink]="['/crear-vuelo']"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+        Agregar Vuelo
+      </button>
+    </a>
+    <div class="bg-white flex justify-center m-6 rounded-lg shadow-lg">
+      <div class="block w-full overflow-x-auto m-4">
+    <table class="w-full text-center text-gray-400 border-separate text-sm" >
+      <thead class="bg-gray-800 text-yellow-500">
+        <tr>
+          <th class="p-3">Numero Vuelo</th>
+          <th class="p-3 text-left">Destino</th>
+          <th class="p-3 text-left">Salida</th>
+          <th class="p-3 text-left">Fecha Asignada</th>
+          <th class="p-3 text-left">Pasajeros</th>
+          <th class="p-3 text-left">Piloto</th>
+          <th class="p-3 text-left">Co-Piloto</th>
+          <th class="p-3 text-left">Avion</th>
+          <th class="p-3 text-left">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="bg-gray-500 text-gray-200" *ngFor="let flight of flights">
+          <td class="p-3 font-bold">
+            {{flight.id}}
+          </td>
+          <td class="p-3 font-bold">
+            {{flight.departure.name}}
+          </td>
+          <td class="p-3 font-bold">
+            {{flight.arrival.name}}
+          </td>
+          <td class="p-3 font-bold">
+            {{flight.assignedDate}}
+          </td>
+          <td class="p-3 font-bold">
+            {{flight.passengers}}
+          </td>
+          <td class="p-3 font-bold">
+            {{flight.pilot.id}}
+          </td>
+          <td class="p-3 font-bold">
+            {{flight.coPilot}}
+          </td>
+          <td class="p-3 font-bold">
+            {{flight.airplane.model}}
+          </td>
+          <td class="p-3 ">
+            <a class="text-red-400 hover:text-red-700  mx-2">
+              <button (click)="deleteflight(flight.id)" class="material-icons-outlined text-base" *ngIf="token != null">
+                <fa-icon [icon]="Delete"></fa-icon>
+              </button>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

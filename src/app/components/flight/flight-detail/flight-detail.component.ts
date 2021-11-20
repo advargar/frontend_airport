@@ -38,9 +38,7 @@ export class FlightDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.isShow  = false;
-    this.getdestinyFly('España');
-    this.getFlightPrice('España');
-    this.getFlightOffers(['Costa Rica', 2000]);
+    this.getFlights();
   }
 
   getFlights(){

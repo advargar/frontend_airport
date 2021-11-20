@@ -3,7 +3,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { EmployeeService } from '../../../services/employee.service';
 import { UserService } from '../../../services/user.service';
 import { global } from '../../../services/global';
-import { faTrash, faPlusCircle  } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faPlusCircle,faEdit } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-employee-detail',
@@ -21,6 +21,7 @@ export class EmployeeDetailComponent implements OnInit {
 
   Delete = faTrash;
   Add = faPlusCircle;
+  Edit = faEdit;
 
   constructor(
     private _route: ActivatedRoute,
@@ -42,6 +43,17 @@ export class EmployeeDetailComponent implements OnInit {
         if (response.status == 'success') {
           this.employees = response.data;
         }
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+
+  deleteEmployee(id) {
+    this._employeeService.delete(this.token, id).subscribe(
+      response => {
+        this.getEmployees();
       },
       error => {
         console.log(error);

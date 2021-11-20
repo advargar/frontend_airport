@@ -40,11 +40,12 @@ export class FlightCatalogDetailComponent implements OnInit {
   }
 
   getflightCatalogs(){
+
     this._flightCatalogService.getflightCatalogs().subscribe(
       response =>{
         if(response.status = 'success'){
           this.flightCatalogs =response.data;
-          console.log(this.identity);
+          console.log(this.flightCatalogs);
         }
       },
       error =>{

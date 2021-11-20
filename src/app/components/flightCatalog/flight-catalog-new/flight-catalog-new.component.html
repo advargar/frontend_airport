@@ -4,21 +4,18 @@
   </div>
 </div>
 
-<div class="alert alert-danger col-md-8" *ngIf="status == 'error'">
-	Los datos son incorrectos.
-</div>
-
-<div class="alert alert-danger col-md-8" *ngIf="status == 'success'">
-	Catalogo de Vuelo registrado exitosamente.
-</div>
-
-<div class=" mt-10 sm:mt-0 bg-no-repeat bg-cover" style="background-image:url(
- https://i.pinimg.com/originals/b0/81/3c/b0813c8a8467b3d94fa3012d4be444ff.jpg
- )">
+<div
+  class="mt-10 sm:mt-0 bg-no-repeat bg-cover"
+  style="
+    background-image: url(https://i.pinimg.com/originals/b0/81/3c/b0813c8a8467b3d94fa3012d4be444ff.jpg);
+  "
+>
   <div class="md:grid md:grid-cols-3 md:gap-6">
     <div class="md:col-span-1">
       <div class="px-4 sm:px-0">
-        <h3 class="text-lg font-medium leading-6 text-gray-900">Catalogo de Vuelos</h3>
+        <h3 class="text-lg font-medium leading-6 text-gray-900">
+          Catalogo de Vuelos
+        </h3>
         <p class="mt-1 text-sm text-gray-600">
           Completa los compos requeridos para añadir un vuelo.
         </p>
@@ -26,61 +23,221 @@
     </div>
 
     <div class="mt-5 md:mt-0 md:col-span-2">
-      <form #flightCatalogForm="ngForm" (ngSubmit)="onSubmit(flightCatalogForm)">
+      <form
+        #flightCatalogForm="ngForm"
+        (ngSubmit)="onSubmit(flightCatalogForm)"
+      >
         <div class="shadow overflow-hidden sm:rounded-md">
           <div class="px-4 py-5 bg-blue-200 sm:p-6">
             <div class="grid grid-cols-6 gap-6">
               <div class="col-span-6 sm:col-span-3">
-                <label for="id" class="block text-sm font-medium text-gray-700">Codigo del Catalogo</label>
-                <input type="text" name="id" id="id" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <label for="id" class="block text-sm font-medium text-gray-700"
+                  >Codigo del Catalogo</label
+                >
+                <input
+                  type="text"
+                  name="id"
+                  #id="ngModel"
+                  [(ngModel)]="flight_Catalog.id"
+                  class="
+                    mt-1
+                    focus:ring-indigo-500 focus:border-indigo-500
+                    block
+                    w-full
+                    shadow-sm
+                    sm:text-sm
+                    border-gray-300
+                    rounded-md
+                  "
+                />
               </div>
 
               <div class="col-span-6 sm:col-span-3">
-                <label for="airline" class="block text-sm font-medium text-gray-700">Aerolinea</label>
-                <input type="text" name="airline" id="airline" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <label
+                  for="aeroline"
+                  class="block text-sm font-medium text-gray-700"
+                  >Aerolinea</label
+                >
+                <input
+                  type="text"
+                  name="aeroline"
+                  #aeroline="ngModel"
+                  [(ngModel)]="flight_Catalog.aeroline"
+                  class="
+                    mt-1
+                    focus:ring-indigo-500 focus:border-indigo-500
+                    block
+                    w-full
+                    shadow-sm
+                    sm:text-sm
+                    border-gray-300
+                    rounded-md
+                  "
+                />
               </div>
 
               <div class="col-span-6 sm:col-span-3">
-                <label for="departure" class="block text-sm font-medium text-gray-700">Salida</label>
-                <input type="text" name="departure" id="departure" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <label
+                  for="departure"
+                  class="block text-sm font-medium text-gray-700"
+                  >Salida</label
+                >
+                <input
+                  type="text"
+                  name="departure"
+                  #departure="ngModel"
+                  [(ngModel)]="flight_Catalog.departure"
+                  class="
+                    mt-1
+                    focus:ring-indigo-500 focus:border-indigo-500
+                    block
+                    w-full
+                    shadow-sm
+                    sm:text-sm
+                    border-gray-300
+                    rounded-md
+                  "
+                />
               </div>
 
               <div class="col-span-6 sm:col-span-4">
-                <label for="arrival" class="block text-sm font-medium text-gray-700">Destino</label>
-                <input type="text" name="arrival" id="arrival" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-              </div>
-
-              <div class="form-group col-md-6">
-                <h2>Elegir fecha para el vuelo</h2>
-                <div class="form-group">
-                  <div class="input-group">
-                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="dateSelected"
-                      [minDate]="minDate" ngbDatepicker #d="ngbDatepicker" required>
-                    <div class="input-group-append">
-                      <button class="btn btn-outline-secondary calendar" (click)="d.toggle()"
-                        type="button">📅</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-span-6">
-                <label for="price_ticket" class="block text-sm font-medium text-gray-700">Precio del tiquete</label>
-                <input type="text" name="price_ticket" id="price_ticket" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <label
+                  for="arrival"
+                  class="block text-sm font-medium text-gray-700"
+                  >Destino</label
+                >
+                <input
+                  type="text"
+                  name="arrival"
+                  #arrival="ngModel"
+                  [(ngModel)]="flight_Catalog.arrival"
+                  class="
+                    mt-1
+                    focus:ring-indigo-500 focus:border-indigo-500
+                    block
+                    w-full
+                    shadow-sm
+                    sm:text-sm
+                    border-gray-300
+                    rounded-md
+                  "
+                />
               </div>
 
               <div class="col-span-6 sm:col-span-3">
-                <label for="status" class="block text-sm font-medium text-gray-700">Estado</label>
-                <select id="country" name="country" autocomplete="country-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                  <option>Disponible</option>
-                  <option>Agotado</option>
+                <label
+                  for="estimated_time"
+                  class="block text-sm font-medium text-gray-700"
+                  >Tiempo Estimado</label
+                >
+                <select
+                  id="estimated_time"
+                  name="estimated_time"
+                  #estimated_time="ngModel"
+                  [(ngModel)]="flight_Catalog.estimated_time"
+                  class="
+                    mt-1
+                    block
+                    w-full
+                    py-2
+                    px-3
+                    border border-gray-300
+                    bg-white
+                    rounded-md
+                    shadow-sm
+                    focus:outline-none
+                    focus:ring-indigo-500
+                    focus:border-indigo-500
+                    sm:text-sm
+                  "
+                >
+                  <option value="1">1:00</option>
+                  <option value="2">2:00</option>
+                  <option value="3">3:00</option>
+                  <option value="4">4:00</option>
+                  <option value="5">5:00</option>
                 </select>
               </div>
 
+              <div class="col-span-6">
+                <label
+                  for="price_ticket"
+                  class="block text-sm font-medium text-gray-700"
+                  >Precio del tiquete</label
+                >
+                <input
+                  type="text"
+                  name="price_ticket"
+                  #price_ticket="ngModel"
+                  [(ngModel)]="flight_Catalog.price_ticket"
+                  class="
+                    mt-1
+                    focus:ring-indigo-500 focus:border-indigo-500
+                    block
+                    w-full
+                    shadow-sm
+                    sm:text-sm
+                    border-gray-300
+                    rounded-md
+                  "
+                />
+              </div>
+
+              <div class="col-span-6 sm:col-span-3">
+                <label
+                  for="status"
+                  class="block text-sm font-medium text-gray-700"
+                  >Estado</label
+                >
+                <select
+                  id="status"
+                  name="status"
+                  #status="ngModel"
+                  [(ngModel)]="flight_Catalog.status"
+                  class="
+                    mt-1
+                    block
+                    w-full
+                    py-2
+                    px-3
+                    border border-gray-300
+                    bg-white
+                    rounded-md
+                    shadow-sm
+                    focus:outline-none
+                    focus:ring-indigo-500
+                    focus:border-indigo-500
+                    sm:text-sm
+                  "
+                >
+                  <option>Active</option>
+                  <option>Unable</option>
+                </select>
+              </div>
             </div>
           </div>
           <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-            <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <button
+              type="submit"
+              class="
+                inline-flex
+                justify-center
+                py-2
+                px-4
+                border border-transparent
+                shadow-sm
+                text-sm
+                font-medium
+                rounded-md
+                text-white
+                bg-indigo-600
+                hover:bg-indigo-700
+                focus:outline-none
+                focus:ring-2
+                focus:ring-offset-2
+                focus:ring-indigo-500
+              "
+            >
               Añadir
             </button>
           </div>
