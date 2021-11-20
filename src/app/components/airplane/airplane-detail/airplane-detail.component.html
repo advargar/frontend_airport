@@ -16,7 +16,7 @@
     Esta es la lista de aviones que estan registrados. en tiempo real
   </p>
   <div class="border rounded-t-lg justify-center bg-gray-300">
-    <a class=" ml-10 mt-3 text-gray-400 hover:text-green-200 mx-2">
+    <a class=" ml-10 mt-3 text-gray-400 hover:text-green-200 mx-2" *ngIf="token != null">
       <button
         [routerLink]="['/crear-avion']"
         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
@@ -61,11 +61,7 @@
 
               <td class="text-center" *ngIf="token != null">
                 <a class="text-yellow-300 hover:text-yellow-500 -ml-11">
-                  <button
-                    [routerLink]="['/crear-avion']"
-                    class="material-icons-outlined text-base"
-                  >
-                    <fa-icon [icon]="Edit"></fa-icon>
+                  <button class="btn btn-lg btn-outline-primary" (click)="editAirplane(airplane)"> <fa-icon [icon]="Edit"></fa-icon>
                   </button>
                 </a>
                 <a class="text-red-400 hover:text-red-800 mx-2">

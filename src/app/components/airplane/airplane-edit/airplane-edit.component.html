@@ -1,0 +1,48 @@
+<form [formGroup]="editForm" (ngSubmit)="onSubmit()" *ngIf="editForm">
+  <div class="card text-center w-50 mx-auto mt-5">
+      <div class="card-header bg-primary text-white">
+          <h3>Update User</h3>
+      </div>
+      <div class="card-body">
+          <div class="form-group row d-flex justify-content-center align-items-center">
+              <label for="airline" class="col-form-label col-sm-2 text-right">airline:</label>
+              <div class="col-sm-5">
+                  <input type="text" formControlName="airline" class="form-control" />
+                  <div *ngIf="editFormData.airline.invalid && (editFormData.airline.dirty || editFormData.airline.touched)" class="alert-danger">
+                      <span>First name is required!</span>
+                  </div>
+              </div>
+          </div>
+          <div class="form-group row d-flex justify-content-center align-items-center">
+              <label for="model" class="col-form-label col-sm-2 text-right">model:</label>
+              <div class="col-sm-5">
+                  <input type="text" formControlName="model" class="form-control" />
+                  <div *ngIf="editFormData.model.invalid && (editFormData.model.dirty || editFormData.model.touched)" class="alert-danger">
+                      <span>Last name is required!</span>
+                  </div>
+              </div>
+          </div>
+          <div class="form-group row d-flex justify-content-center align-items-center">
+              <label for="desing" class="col-form-label col-sm-2 text-right">desing:</label>
+              <div class="col-sm-5">
+                  <input type="text" formControlName="desing" class="form-control" />
+                  <div *ngIf="editFormData.desing.invalid && (editFormData.desing.dirty || editFormData.desing.touched)" class="alert-danger">
+                    <span>Last name is required!</span>
+                </div>
+              </div>
+          </div>
+          <div class="form-group row d-flex justify-content-center align-items-center">
+              <label for="capacity" class="col-form-label col-sm-2 text-right">capacity:</label>
+              <div class="col-sm-5">
+                  <input type="text" formControlName="capacity" class="form-control" />
+                  <div *ngIf="editFormData.capacity.invalid && (editFormData.capacity.dirty || editFormData.capacity.touched)" class="alert-danger">
+                      <span>Mobile number is required!</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="card-footer">
+          <button [disabled]="isLoading" class="btn btn-primary mr-2">Update</button>
+      </div>
+  </div>
+</form>

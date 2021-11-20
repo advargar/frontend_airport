@@ -10,7 +10,7 @@
     </div>
 
     <div class="p-6 border rounded-t-lg">
-      <div class="text-green-600 hover:text-green-200 center mx-2 mb-5">
+      <div class="text-green-600 hover:text-green-200 center mx-2 mb-5" *ngIf="token != null">
         <button [routerLink]="['/registrar-aeropuerto']" class="
             bg-blue-500
             hover:bg-blue-400
