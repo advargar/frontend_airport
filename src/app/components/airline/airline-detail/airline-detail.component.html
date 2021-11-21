@@ -31,9 +31,9 @@
           <h2 class="font-bold text-gray-700 my-0">{{ airline.name }}</h2>
         </div>
         <div class='flex text-gray-200 text-sm '>
-          <div class="pr-3 space-x-2">
+          <div class="pr-3 space-x-2" *ngIf="token != null">
             <button type="button" class="transform text-yellow-500 hover:text-yellow-700"
-            >
+            [routerLink]="['/editar-aerolinea', airline.id]">
               <fa-icon [icon]="Edit"></fa-icon>
             </button>
             <button type="button" class="transform text-red-500 hover:text-red-800 " (click)="deleteAirline(airline.id)">

@@ -27,13 +27,12 @@ export class AirplaneEditComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    const userId = this._route.snapshot.params['id'];
+    const userId = this._route.snapshot.params['id'];// capturamos el id que viene en la URL
     this.getAirplane(userId);
   }
 
   getAirplane(id) {
-			// Peticion ajax para sacar los datos de la categoria
-      console.log(id);
+			// Peticion ajax para sacar los datos del Avion
 			this._airplaneService.getAirplane(id).subscribe(
 				response => {
 					if (response.status == 'success') {
@@ -46,7 +45,6 @@ export class AirplaneEditComponent implements OnInit {
               this.airplane.desing = this.airplanes.desing,
               this.airplane.capacity = this.airplanes.capacity,
             );
-              console.log(this.airplanes, this.airplane);
 					}
 				},
 				error => {
@@ -57,7 +55,6 @@ export class AirplaneEditComponent implements OnInit {
 	}
 
   onSubmit(form){
-    console.log(form);
         this._airplaneService.update(this.token,this.airplane, this.airplane.id).subscribe(
           response =>{
             if(response.status == 'success'){

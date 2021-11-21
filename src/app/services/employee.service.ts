@@ -20,6 +20,10 @@ export class EmployeeService{
   let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
   return this._http.get(this.url + 'employee', {headers: headers});
  }
+ getEmployee(id): Observable<any> {
+  let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+  return this._http.get(this.url + 'employee/' + id, { headers: headers });
+}
 
  create(token, employee): Observable<any> {
   let json = JSON.stringify(employee);
