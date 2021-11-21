@@ -3,9 +3,13 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Airplane } from '../models/airplane';
 import { global } from './global';
+import { AirlineEditComponent } from '../components/airline/airline-edit/airline-edit.component';
 
 @Injectable()
 export class AirplaneService{
+  open(AirlineEditComponent: AirlineEditComponent, arg1: { centered: boolean; }) {
+    throw new Error('Method not implemented.');
+  }
   public url: string;
  constructor(private _http: HttpClient){
    this.url = global.url;

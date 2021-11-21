@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AirplaneService } from '../../../services/airplane.service';
 import { Airplane } from '../../../models/airplane';
@@ -15,53 +13,65 @@ import { UserService } from '../../../services/user.service';
 export class AirplaneEditComponent implements OnInit {
 
   public airplane: Airplane;
+  public airplanes: any;
   public status;
   public token;
-
-  editForm!: FormGroup;
-  isLoading = false;
-  modal: any;
   constructor(
-    private modalService: NgbActiveModal,
-    private _route: ActivatedRoute,
     private _router: Router,
-    private formBuilder: FormBuilder,
     public _airplaneService: AirplaneService,
-    public _UserService: UserService
+    public _UserService: UserService,
+    private _route: ActivatedRoute,
   ) {
     this.airplane = new Airplane("", " "," ", " ", "");
     this.token = this._UserService.getToken();
-  }
+   }
 
   ngOnInit(): void {
-    this.setForm();
+    const userId = this._route.snapshot.params['id'];
+    this.getAirplane(userId);
   }
 
-  get editFormData() { return this.editForm.controls; }
+  getAirplane(id) {
+			// Peticion ajax para sacar los datos de la categoria
+      console.log(id);
+			this._airplaneService.getAirplane(id).subscribe(
+				response => {
+					if (response.status == 'success') {
+            this.airplanes = response.data;
 
-  private setForm() {
-    console.log(this.airplane);
+            this.airplane = new Airplane(
+              this.airplane.id = this.airplanes.id,
+              this.airplane.airline = this.airplanes.airline,
+              this.airplane.model = this.airplanes.model,
+              this.airplane.desing = this.airplanes.desing,
+              this.airplane.capacity = this.airplanes.capacity,
+            );
+              console.log(this.airplanes, this.airplane);
+					}
+				},
+				error => {
+					console.log(error);
+					this._router.navigate(['/gestionar-avion']);
+				}
+			);
+	}
 
-    this.editForm = this.formBuilder.group({
-      id: [this.airplane.id],
-      airline: [this.airplane.airline, Validators.required],
-      model: [this.airplane.model, Validators.required],
-      desing: [this.airplane.desing, Validators.required],
-      capacity: [this.airplane.capacity, Validators.required]
-    });
-  }
-
-  onSubmit() {
-    if (this.editForm.invalid || this.isLoading) {
-      return;
-    }
-    this.isLoading = true;
-    this._airplaneService.update(this.token,this.editForm.value, this.airplane.id).subscribe(x => {
-      this.isLoading = false;
-      this.modal.close('Yes');
-    },
-      error => {
-        this.isLoading = false;
-      });
-  }
+  onSubmit(form){
+    console.log(form);
+        this._airplaneService.update(this.token,this.airplane, this.airplane.id).subscribe(
+          response =>{
+            if(response.status == 'success'){
+              this.airplane = response.data;
+              this.status = response.status;
+              this._router.navigate(['/gestionar-avion']);
+            }else{
+              this.status = 'error';
+            }
+          },
+          error => {
+            this.status = 'error';
+            console.log(<any>error);
+          }
+        );
+      }
 }

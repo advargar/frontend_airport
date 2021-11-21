@@ -61,7 +61,8 @@
 
               <td class="text-center" *ngIf="token != null">
                 <a class="text-yellow-300 hover:text-yellow-500 -ml-11">
-                  <button class="btn btn-lg btn-outline-primary" (click)="editAirplane(airplane)"> <fa-icon [icon]="Edit"></fa-icon>
+                  <button class="btn btn-lg btn-outline-primary" [routerLink]="['/editar-avion', airplane.id]">
+                     <fa-icon [icon]="Edit"></fa-icon>
                   </button>
                 </a>
                 <a class="text-red-400 hover:text-red-800 mx-2">
