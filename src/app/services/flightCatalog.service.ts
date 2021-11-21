@@ -13,6 +13,11 @@ export class flightCatalogService{
   let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
   return this._http.get(this.url + 'flightCatalog', {headers: headers});
  }
+ getflightCatalog(id): Observable<any> {
+  let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+  return this._http.get(this.url + 'flightCatalog/' + id, { headers: headers });
+}
+
  create(token, flightCatalog): Observable<any> {
   let json = JSON.stringify(flightCatalog);
   let params = "json=" + json;
