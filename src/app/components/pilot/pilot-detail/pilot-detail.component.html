@@ -9,7 +9,7 @@
   </div>
 
   <div class="w-2/3 h-screen flex items-center mx-auto">
-    <div class="p-6 border rounded-t-lg bg-gray-100">
+    <div class="p-6 border rounded-t-lg bg-gradient-to-r from-red-900 to-yellow-500">
 
       <div class=" text-green-600 hover:text-green-200 center mx-2" *ngIf="token != null">
         <button [routerLink]="['/registro-piloto']"  class="bg-blue-500  hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
@@ -19,14 +19,14 @@
 
       <div class="flex flex-wrap -mx-2">
         <div class="w-1/3 px-2" *ngFor="let pilot of pilots">
-          <div class="bg-gradient-to-r from-purple-500 px-4 hover:bg-gray-800 py-2 my-2 rounded-lg shadow">
+          <div class="bg-gradient-to-r from-gray-400 px-4 hover:bg-gray-800 py-2 my-2 rounded-lg shadow">
 
-            <div class="mb-2">
+            <div class="blog_title mb-2 text-center">
               <a class="font-semibold leading-tight text-2xl text-gray-100 hover:text-gray-100">
-                id piloto: {{pilot.id}}
+                Identificación: {{pilot.id}}
               </a>
             </div>
-            <div class='flex text-gray-200 text-xl '>
+            <div class='flex text-white text-xl font-semibold'>
               <div class="pr-3"> {{pilot.employee.name}}</div>
               <div>{{pilot.employee.surname}}</div>
             </div>
