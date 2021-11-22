@@ -17,6 +17,11 @@ export class PilotService{
   let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
   return this._http.get(this.url + 'pilot', {headers: headers});
  }
+ getPilot(id): Observable<any> {
+  let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+  return this._http.get(this.url + 'pilot/' + id, { headers: headers });
+}
+
  create(token, pilot): Observable<any> {
   let json = JSON.stringify(pilot);
   let params = "json=" + json;

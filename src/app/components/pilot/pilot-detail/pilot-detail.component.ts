@@ -3,7 +3,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { PilotService } from '../../../services/pilot.service';
 import { UserService } from '../../../services/user.service';
 import { global } from '../../../services/global';
-import { faTrash, faPlusCircle  } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faPlusCircle, faEdit } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-pilot-detail',
@@ -20,6 +20,7 @@ export class PilotDetailComponent implements OnInit {
   public status;
   Delete = faTrash;
   Add = faPlusCircle;
+  Edit = faEdit;
 
   constructor(
     private _route: ActivatedRoute,

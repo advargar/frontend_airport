@@ -16,7 +16,7 @@
     Esta es la lista de los vuelos que estan disponibles.
   </p>
   <div class="border rounded-t-lg justify-center bg-gray-300">
-    <a class=" ml-10 mt-3 text-gray-400 hover:text-green-200 mx-2">
+    <a class=" ml-10 mt-3 text-gray-400 hover:text-green-200 mx-2" *ngIf="token != null">
       <button
         [routerLink]="['/crear-vuelo']"
         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
@@ -65,13 +65,22 @@
           <td class="p-3 font-bold">
             {{flight.airplane.model}}
           </td>
-          <td class="p-3 ">
-            <a class="text-red-400 hover:text-red-700  mx-2">
-              <button (click)="deleteflight(flight.id)" class="material-icons-outlined text-base" *ngIf="token != null">
+          <td class="text-right p-3" *ngIf="token != null">
+            <a class="text-yellow-300 hover:text-yellow-500 -ml-11">
+              <button class="btn btn-lg btn-outline-primary" [routerLink]="['/editar-vuelo', flight.id]">
+                 <fa-icon [icon]="Edit"></fa-icon>
+              </button>
+            </a>
+            <a class="text-red-400 hover:text-red-800 mx-2">
+              <button
+              (click)="deleteflight(flight.id)"
+                class="material-icons-outlined text-base"
+              >
                 <fa-icon [icon]="Delete"></fa-icon>
               </button>
             </a>
           </td>
+
         </tr>
       </tbody>
     </table>

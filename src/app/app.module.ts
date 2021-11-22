@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, FormBuilder, ReactiveFormsModule  } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
@@ -31,6 +31,13 @@ import { RegisterUserComponent } from './components/user/register-user/register-
 import { AirportNewComponent } from './components/airport/airport-new/airport-new.component';
 import { AirportDetailComponent } from './components/airport/airport-detail/airport-detail.component';
 import { LoginUserComponent } from './components/user/login-user/login-user.component';
+import { AirportEditComponent } from './components/airport/airport-edit/airport-edit.component';
+import { AirlineEditComponent } from './components/airline/airline-edit/airline-edit.component';
+import { PilotEditComponent } from './components/pilot/pilot-edit/pilot-edit.component';
+import { EmployeeEditComponent } from './components/employee/employee-edit/employee-edit.component';
+import { FlightEditComponent } from './components/flight/flight-edit/flight-edit.component';
+import { FlightCatalogEditComponent } from './components/flightCatalog/flight-catalog-edit/flight-catalog-edit.component';
+import { AirplaneEditComponent } from './components/airplane/airplane-edit/airplane-edit.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +60,14 @@ import { LoginUserComponent } from './components/user/login-user/login-user.comp
     RegisterUserComponent,
     AirportNewComponent,
     AirportDetailComponent,
-    LoginUserComponent
+    LoginUserComponent,
+    AirportEditComponent,
+    AirlineEditComponent,
+    PilotEditComponent,
+    EmployeeEditComponent,
+    FlightEditComponent,
+    FlightCatalogEditComponent,
+    AirplaneEditComponent
   ],
   imports: [
     BrowserModule,
@@ -65,9 +79,10 @@ import { LoginUserComponent } from './components/user/login-user/login-user.comp
     MatDialogModule,
     MatInputModule,
     FormsModule,
+    ReactiveFormsModule,
     NgbModule
   ],
-  providers: [],
+  providers: [ FormBuilder,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

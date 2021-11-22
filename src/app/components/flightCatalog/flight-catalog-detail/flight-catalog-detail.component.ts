@@ -4,7 +4,7 @@ import { Flight_Catalog } from '../../../models/flightCatalog';
 import { flightCatalogService } from '../../../services/flightCatalog.service';
 import { UserService } from '../../../services/user.service';
 import { global } from '../../../services/global';
-import { faTrash, faPlusCircle  } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faPlusCircle,faEdit } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-flight-catalog-detail',
@@ -22,6 +22,7 @@ export class FlightCatalogDetailComponent implements OnInit {
   public token;
   Delete = faTrash;
   Add = faPlusCircle;
+  Edit = faEdit;
 
   constructor(
     private _router: Router,

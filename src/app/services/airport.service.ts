@@ -20,7 +20,10 @@ export class AirportService{
   let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
    return this._http.get(this.url + 'airport', {headers: headers});
  }
-
+ getAirport(id): Observable<any> {
+  let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+  return this._http.get(this.url + 'airport/' + id, { headers: headers });
+}
  getAirportEmployee(airportId): Observable<any>{
   return this._http.get(this.url + 'airport/employee' + airportId);
 }
