@@ -33,6 +33,12 @@
 
             <div class='flex text-gray-200 text-sm '>
               <div class="pr-3">
+                <!-- No esta la funcion de Update Pilot en el backend
+                  <button type="button" class="transform text-yellow-500 hover:text-yellow-700"
+                [routerLink]="['/editar-piloto', pilot.id]"
+                *ngIf="token != null">
+                  <fa-icon [icon]="Edit" class="mr-10"></fa-icon>
+                </button> -->
                 <button type="button" class="transform hover:text-red-500 " (click)="deletePilot(pilot.id)"
                 *ngIf="token != null">
                   <fa-icon [icon]="Delete"></fa-icon>
