@@ -49,7 +49,6 @@ export class EmployeeDetailComponent implements OnInit {
       }
     );
   }
-
   deleteEmployee(id) {
     this._employeeService.delete(this.token, id).subscribe(
       response => {

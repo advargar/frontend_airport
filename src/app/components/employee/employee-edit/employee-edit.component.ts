@@ -54,21 +54,20 @@ export class EmployeeEditComponent implements OnInit {
 	}
 
   onSubmit(form){
-        this._employeeService.update(this.token,this.employee, this.employee.id).subscribe(
-          response =>{
-            if(response.status == 'success'){
-              this.employee = response.data;
-              this.status = response.status;
-              this._router.navigate(['/gestionar-empleado']);
-            }else{
-              this.status = 'error';
-            }
-          },
-          error => {
-            this.status = 'error';
-            console.log(<any>error);
-          }
-        );
+    this._employeeService.update(this.token,this.employee, this.employee.id).subscribe(
+      response =>{
+        if(response.status == 'success'){
+          this.employee = response.data;
+          this.status = response.status;
+          this._router.navigate(['/inicio']);
+        }else{
+          this.status = 'error';
+        }
+      },
+      error => {
+        this.status = 'error';
+        console.log(<any>error);
       }
-
+    );
+  }
 }

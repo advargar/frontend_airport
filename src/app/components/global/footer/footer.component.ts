@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input  } from '@angular/core';
 import { faFacebook, faTwitter, faLinkedinIn, faYoutube, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
@@ -14,6 +14,18 @@ export class FooterComponent implements OnInit {
   Intagram = faInstagram;
   YouTube = faYoutube;
   Linkedin = faLinkedinIn;
+
+  date = new Date().getFullYear();
+
+  @Input()
+  get absolute(): boolean {
+    return this._absolute;
+  }
+  set absolute(absolute: boolean) {
+    this._absolute = absolute === undefined ? false : absolute;
+  }
+  private _absolute = false;
+
   constructor() { }
 
   ngOnInit(): void {

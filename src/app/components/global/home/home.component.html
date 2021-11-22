@@ -1,14 +1,25 @@
-<!-- Empieza vista de vuelos -->
-<!-- component -->
-<section class="container mx-auto px-4 p-6 font-mono">
-  <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
-    <app-flight-catalog-detail></app-flight-catalog-detail>
-  </div>
-</section>
 
 <!-- Empieza vista de pilotos -->
-<section class="container mx-auto px-4 p-6 bg-gray-100">
-
+<section class="mt-48 md:mt-20 pb-40 relative bg-gray-100">
+  <div
+  class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
+  style="transform: translateZ(0)"
+>
+  <svg
+    class="absolute bottom-0 overflow-hidden"
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="none"
+    version="1.1"
+    viewBox="0 0 2560 100"
+    x="0"
+    y="0"
+  >
+    <polygon
+      class="text-gray-100 fill-current"
+      points="2560 0 2560 100 0 100"
+    ></polygon>
+  </svg>
+</div>
   <div class="container mx-auto">
     <div>
      <app-pilot-detail></app-pilot-detail>
@@ -18,6 +29,7 @@
 
 <!-- Empieza vista de Aeropuertos -->
 <section class="container mx-auto px-4 p-6 ">
+
   <div>
   <app-airport-detail></app-airport-detail>
   </div>

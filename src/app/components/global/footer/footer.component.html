@@ -1,23 +1,119 @@
-<footer class="relative pt-8 ">
-  <hr class="my-6 border-blueGray-300" />
-
-  <div class="container mx-auto px-4 bg-yellow-50">
+<footer class="relative bg-gray-200 pt-8 pb-6">
+  <div
+    class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
+    style="transform: translateZ(0)"
+  >
+    <svg
+      class="absolute bottom-0 overflow-hidden"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="none"
+      version="1.1"
+      viewBox="0 0 2560 100"
+      x="0"
+      y="0"
+    >
+      <polygon
+        class="text-gray-200 fill-current"
+        points="2560 0 2560 100 0 100"
+      ></polygon>
+    </svg>
+  </div>
+  <div class="container mx-auto px-4">
     <div class="flex flex-wrap text-center lg:text-left">
       <div class="w-full lg:w-6/12 px-4">
-        <h4 class="text-3xl text-blue-700 font-semibold m-4">Aeropuerto Daniel Oduber</h4>
-        <img src="https://www.guanacasteairport.com/wp-content/uploads/2019/10/logo.png">
+        <img src="https://img.icons8.com/pastel-glyph/64/000000/airplane-take-off--v2.png"/>
+        <h4 class="text-3xl font-semibold">Mejora tu manejo de vuelos!</h4>
+        <h5 class="text-lg mt-0 mb-2 text-gray-600">
+          Encuentranos en cualquiera de estas plataformas.
+        </h5>
+        <div class="mt-6 lg:mb-0 mb-6">
+          <button
+            class="bg-white text-blue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+            type="button"
+          >
+          <fa-icon [icon]="Twitter"></fa-icon>
+          </button>
+          <button
+            class="bg-white text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+            type="button"
+          >
+          <fa-icon [icon]="Facebook"></fa-icon>
+          </button>
+          <button
+            class="bg-white text-red-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+            type="button"
+          >
+          <fa-icon [icon]="Intagram"></fa-icon>
+          </button>
+          <button
+            class="bg-white text-red-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+            type="button"
+          >
+          <fa-icon [icon]="YouTube"></fa-icon>
+          </button>
+        </div>
       </div>
       <div class="w-full lg:w-6/12 px-4">
-        <div class="flex flex-wrap content-start mb-6">
-          <div class="w-full md:w-4/5 px-8">
-            <ul class="inline-flex
-            sm:ml-auto sm:mt-0
-            mt-4
-            justify-center
-            sm:justify-start">
+        <div class="flex flex-wrap items-top mb-6">
+          <div class="w-full lg:w-4/12 px-4 ml-auto">
+            <span
+              class="block uppercase text-gray-500 text-sm font-semibold mb-2"
+            >
+              Useful Links
+            </span>
+            <ul class="list-unstyled">
               <li>
                 <a
-                  class="text-blue-700 hover:text-black font-semibold block pb-8 text-sm p-4"
+                  class="text-gray-600 hover:text-gray-800 font-semibold block pb-2 text-sm"
+                  href="https://www.creative-tim.com/presentation?ref=na-footer"
+                >
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a
+                  class="text-gray-600 hover:text-gray-800 font-semibold block pb-2 text-sm"
+                  href="https://blog.creative-tim.com?ref=na-footer"
+                >
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a
+                  class="text-gray-600 hover:text-gray-800 font-semibold block pb-2 text-sm"
+                  href="https://www.github.com/creativetimofficial?ref=na-footer"
+                >
+                  Github
+                </a>
+              </li>
+              <li>
+                <a
+                  class="text-gray-600 hover:text-gray-800 font-semibold block pb-2 text-sm"
+                  href="https://www.creative-tim.com/bootstrap-themes/free?ref=na-footer"
+                >
+                  Free Products
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="w-full lg:w-4/12 px-4">
+            <span
+              class="block uppercase text-gray-500 text-sm font-semibold mb-2"
+            >
+              Other Resources
+            </span>
+            <ul class="list-unstyled">
+              <li>
+                <a
+                  class="text-gray-600 hover:text-gray-800 font-semibold block pb-2 text-sm"
+                  href="https://github.com/creativetimofficial/notus-angular/blob/main/LICENSE.md?ref=creativetim"
+                >
+                  MIT License
+                </a>
+              </li>
+              <li>
+                <a
+                  class="text-gray-600 hover:text-gray-800 font-semibold block pb-2 text-sm"
                   href="https://creative-tim.com/terms?ref=na-footer"
                 >
                   Terms & Conditions
@@ -25,7 +121,7 @@
               </li>
               <li>
                 <a
-                  class="text-blue-700 hover:text-black font-semibold block pb-2 text-sm p-4"
+                  class="text-gray-600 hover:text-gray-800 font-semibold block pb-2 text-sm"
                   href="https://creative-tim.com/privacy?ref=na-footer"
                 >
                   Privacy Policy
@@ -33,7 +129,7 @@
               </li>
               <li>
                 <a
-                  class="text-blue-700 hover:text-black font-semibold block pb-2 text-sm p-4"
+                  class="text-gray-600 hover:text-gray-800 font-semibold block pb-2 text-sm"
                   href="https://creative-tim.com/contact-us?ref=na-footer"
                 >
                   Contact Us
@@ -44,50 +140,20 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="flex flex-wrap items-center bg-indigo-50 md:justify-between justify-center">
-    <div class=" container
-    mx-auto
-    py-1
-    px-5
-    flex flex-wrap flex-col
-    sm:flex-row">
-      <div class="text-sm text-blueGray-500 font-semibold py-1">
-         © Copyright 2021 -
-        <a
-          href="https://www.creative-tim.com?ref=na-footer"
-          class="text-blueGray-500 hover:text-blueGray-800"
-        >
-          Creative by Adrian, Daniel & Michaell
-        </a>
-
+    <hr class="my-6 border-gray-300" />
+    <div class="flex flex-wrap items-center md:justify-between justify-center">
+      <div class="w-full md:w-4/12 px-4 mx-auto text-center">
+        <div class="text-sm text-gray-500 font-semibold py-1">
+          Copyright © {{ date }} All rights reserved |
+          <a
+            href="https://www.creative-tim.com?ref=na-footer"
+            class="text-gray-500 hover:text-gray-800"
+          >
+            Creative by Michaell, Daniel & Adrián
+          </a>
+          .
+        </div>
       </div>
-      <span
-        class="
-          inline-flex
-          sm:ml-auto sm:mt-0
-          mt-2
-          justify-center
-          sm:justify-start
-        "
-      >
-        <a href="" class="text-blue-500">
-          <fa-icon [icon]="Facebook"></fa-icon>
-        </a>
-        <a href="" class="ml-3 text-blue-500">
-          <fa-icon [icon]="Twitter"></fa-icon>
-        </a>
-        <a href="" class="ml-3 text-blue-500">
-          <fa-icon [icon]="Linkedin"></fa-icon>
-        </a>
-        <a href="" class="ml-3 text-red-500">
-          <fa-icon [icon]="YouTube"></fa-icon>
-        </a>
-        <a href="" class="ml-3 text-red-500">
-          <fa-icon [icon]="Intagram"></fa-icon>
-        </a>
-      </span>
     </div>
   </div>
 </footer>
-
