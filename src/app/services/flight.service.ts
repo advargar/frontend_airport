@@ -20,6 +20,10 @@ export class FlightService{
   let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
   return this._http.get(this.url + 'flight', {headers: headers});
  }
+ getFlight(id): Observable<any> {
+  let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+  return this._http.get(this.url + 'flight/' + id, { headers: headers });
+}
 
  getFlightOffers(flight): Observable<any>{
   let json = JSON.stringify(flight);

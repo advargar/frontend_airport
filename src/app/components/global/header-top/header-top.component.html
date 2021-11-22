@@ -153,7 +153,35 @@
       <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
         <li class="flex items-center"></li>
 
-        <li class="flex items-center">
+        <li *ngIf="token === null" [routerLink]="['/login-user']" class="nav-item active">
+          <button
+          class="
+            bg-red-600
+            text-white
+            active:bg-red-700
+            text-xs
+            font-bold
+            uppercase
+            px-4
+            py-2
+            rounded
+            shadow
+            hover:shadow-lg
+            outline-none
+            focus:outline-none
+            lg:mr-1 lg:mb-0
+            ml-3
+            mb-3
+            ease-linear
+            transition-all
+            duration-150
+          "
+          [routerLink]="['/login-user']"
+          type="button"
+        >INICIAR SESION
+          </button>
+        </li>
+        <li *ngIf="token != null" [routerLink]="['/login-user/1']" class="nav-item active">
           <button
             class="
               bg-red-600
@@ -178,10 +206,10 @@
             "
             [routerLink]="['/login-user']"
             type="button"
-          >
-            <i class="fas fa-arrow-alt-circle-down"></i> Iniciar Sesion
-          </button>
+          >CERRAR SESION
+        </button>
         </li>
+
       </ul>
     </div>
   </div>

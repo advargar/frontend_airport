@@ -3,9 +3,13 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Airplane } from '../models/airplane';
 import { global } from './global';
+import { AirlineEditComponent } from '../components/airline/airline-edit/airline-edit.component';
 
 @Injectable()
 export class AirplaneService{
+  open(AirlineEditComponent: AirlineEditComponent, arg1: { centered: boolean; }) {
+    throw new Error('Method not implemented.');
+  }
   public url: string;
  constructor(private _http: HttpClient){
    this.url = global.url;
@@ -15,6 +19,12 @@ export class AirplaneService{
   let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
    return this._http.get(this.url + 'airplane', {headers: headers});
  }
+
+ getAirplane(id): Observable<any> {
+  let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+  return this._http.get(this.url + 'airplane/' + id, { headers: headers });
+}
+
  create(token, airplane): Observable<any> {
   let json = JSON.stringify(airplane);
   let params = "json=" + json;

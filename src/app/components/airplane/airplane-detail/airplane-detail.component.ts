@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
-import { Airport } from '../../../models/airport';
+import { Component, OnInit  } from '@angular/core';
 import { AirplaneService } from '../../../services/airplane.service';
 import { UserService } from '../../../services/user.service';
 import { global } from '../../../services/global';
@@ -18,14 +16,11 @@ export class AirplaneDetailComponent implements OnInit {
   public airplanes: any;
   public identity;
   public token;
-  public isShow : boolean = true;
   Delete = faTrash;
   Add = faPlusCircle;
   Edit = faEdit;
 
   constructor(
-    private _route: ActivatedRoute,
-    private _router: Router,
     private _airplaneService: AirplaneService,
     private _userService: UserService
   ) {
@@ -37,6 +32,7 @@ export class AirplaneDetailComponent implements OnInit {
   ngOnInit(): void {
     this.getAirplanes();
   }
+
 
   getAirplanes(){
     this._airplaneService.getAirplanes().subscribe(
