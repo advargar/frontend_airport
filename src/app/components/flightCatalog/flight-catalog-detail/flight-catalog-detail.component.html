@@ -1,0 +1,57 @@
+<!--image-->
+<div class="flex items-center justify-center min-h-screen bg-no-repeat bg-cover" style="background-image:url(
+https://img3.wallspic.com/previews/5/4/2/4/6/164245/164245-airplane-flight-aircraft-airport-takeoff-x750.jpg
+)">
+
+<!--Container-->
+<div class="col-span-12">
+  <div class="overflow-auto lg:overflow-visible ">
+    <table class="table text-gray-400 border-separate space-y-6 text-sm" >
+      <thead class="bg-gray-800 text-gray-500">
+        <tr>
+          <th class="p-3">Aerolinea</th>
+          <th class="p-3 text-left">Duracion</th>
+          <th class="p-3 text-left">Destino</th>
+          <th class="p-3 text-left">Salida</th>
+          <th class="p-3 text-left">Estado</th>
+          <th class="p-3 text-left">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="bg-gray-500 text-gray-200" *ngFor="let flightCatalog of flightCatalogs">
+          <td class="p-3">
+            {{flightCatalog.Aerolinea}}
+          </td>
+          <td class="p-3">
+            {{flightCatalog.Duracion}}
+          </td>
+          <td class="p-3 font-bold">
+            {{flightCatalog.Destino}}
+          </td>
+          <td class="p-3 font-bold">
+            {{flightCatalog.Salida}}
+          </td>
+          <td class="p-3">
+            <span class="text-gray-50 rounded-md px-2"
+            [ngStyle]="{'bg-green-500':flightCatalog.Estado === 'Active' ? 'bg-green-700' : 'red-700'}" >{{flightCatalog.Estado}}</span>
+          </td>
+          <td class="p-3 ">
+            <a class="text-gray-400 hover:text-red-500  mx-2">
+              <button (click)="deleteflightCatalog(flightCatalog.Codigo)" class="material-icons-outlined text-base" *ngIf="token != null">
+                <fa-icon [icon]="Delete"></fa-icon>
+              </button>
+            </a>
+          </td>
+          <td class="p-3 ">
+            <a class="text-green-600 hover:text-green-200  mx-2">
+              <button [routerLink]="['/crear-catalogoVuelo']"  class="material-icons-outlined text-base">
+                <fa-icon [icon]="Add"></fa-icon>
+              </button>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>

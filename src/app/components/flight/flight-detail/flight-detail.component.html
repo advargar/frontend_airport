@@ -1,0 +1,79 @@
+<!--image-->
+<div
+  class="container w-full max-w-6xl mx-auto bg-white bg-cover mt-8 rounded"
+  style="
+    background-image: url('https://www.nacion.com/resizer/KKBeqpR6_xxol6asPYBR74h0G14=/1200x0/center/middle/filters:quality(100)/arc-anglerfish-arc2-prod-gruponacion.s3.amazonaws.com/public/K43LGL44KJBQJLRTAG6MVQC3AU.jpg');
+    height: 75vh;
+  "
+></div>
+
+<!--Container-->
+<div class="container max-w-5xl mx-auto -mt-32">
+  <h6 class="text-6xl font-bold p-4 text-white text-left md:text-center">
+    Vuelos
+  </h6>
+  <p class="flex-grow font-bold text-white text-left md:text-center">
+    Esta es la lista de los vuelos que estan disponibles.
+  </p>
+  <div class="border rounded-t-lg justify-center bg-gray-300">
+    <a class=" ml-10 mt-3 text-gray-400 hover:text-green-200 mx-2" *ngIf="token != null">
+      <button
+        [routerLink]="['/crear-vuelo']"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+        Agregar Vuelo
+      </button>
+    </a>
+    <div class="bg-white flex justify-center m-6 rounded-lg shadow-lg">
+      <div class="block w-full overflow-x-auto m-4">
+    <table class="w-full text-center text-gray-400 border-separate text-sm" >
+      <thead class="bg-gray-800 text-yellow-500">
+        <tr>
+          <th class="p-3">Numero Vuelo</th>
+          <th class="p-3 text-left">Destino</th>
+          <th class="p-3 text-left">Salida</th>
+          <th class="p-3 text-left">Fecha Asignada</th>
+          <th class="p-3 text-left">Pasajeros</th>
+          <th class="p-3 text-left">Piloto</th>
+          <th class="p-3 text-left">Co-Piloto</th>
+          <th class="p-3 text-left">Avion</th>
+          <th class="p-3 text-left">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="bg-gray-500 text-gray-200" *ngFor="let flight of flights">
+          <td class="p-3 font-bold">
+            {{flight.id}}
+          </td>
+          <td class="p-3 font-bold">
+            {{flight.departure.name}}
+          </td>
+          <td class="p-3 font-bold">
+            {{flight.arrival.name}}
+          </td>
+          <td class="p-3 font-bold">
+            {{flight.assignedDate}}
+          </td>
+          <td class="p-3 font-bold">
+            {{flight.passengers}}
+          </td>
+          <td class="p-3 font-bold">
+            {{flight.pilot.id}}
+          </td>
+          <td class="p-3 font-bold">
+            {{flight.coPilot}}
+          </td>
+          <td class="p-3 font-bold">
+            {{flight.airplane.model}}
+          </td>
+          <td class="p-3 ">
+            <a class="text-red-400 hover:text-red-700  mx-2">
+              <button (click)="deleteflight(flight.id)" class="material-icons-outlined text-base" *ngIf="token != null">
+                <fa-icon [icon]="Delete"></fa-icon>
+              </button>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

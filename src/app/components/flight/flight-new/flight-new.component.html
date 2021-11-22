@@ -1,0 +1,100 @@
+<div class="hidden sm:block" aria-hidden="true">
+  <div class="py-5">
+    <div class="border-t border-gray-200"></div>
+  </div>
+</div>
+
+<div class=" mt-10 sm:mt-0">
+  <div class="md:grid md:grid-cols-3 md:gap-6">
+    <div class="md:col-span-1">
+      <div class="px-4 sm:px-0">
+        <h3 class="text-lg font-medium leading-6 text-gray-900">Vuelos</h3>
+        <p class="mt-1 text-sm text-gray-600">
+          Completa los compos requeridos para añadir un vuelo.
+        </p>
+      </div>
+
+      <div class="bg-red-100 border border-red-400 text-red-700 mt-10 px-4 py-3 rounded relative" role="alert" *ngIf="status == 'error'">
+        <strong class="font-bold">Error!</strong>
+        <span class="block sm:inline"> Datos repetidos o los datos son incorrectos.</span>
+        <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+          <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+        </span>
+      </div>
+
+      <div class="bg-blue-100 border border-blue-400 text-blue-700 mt-10 px-4 py-3 rounded relative" role="alert" *ngIf="status == 'success'">
+        <strong class="font-bold">Enhorabuena!</strong>
+        <span class="block sm:inline"> Nueva Vuelo Agregado.</span>
+        <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+          <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        </span>
+      </div>
+    </div>
+
+    <div class="mt-5 md:mt-0 md:col-span-2">
+      <form #flightForm="ngForm" (ngSubmit)="onSubmit(flightForm)">
+        <div class="shadow overflow-hidden sm:rounded-md">
+          <div class="px-4 py-5 bg-blue-200 sm:p-6">
+            <div class="grid grid-cols-6 gap-6">
+              <div class="col-span-6 sm:col-span-3">
+                <label for="id" class="block text-sm font-medium text-gray-700">Codigo del Vuelo</label>
+                <input type="text" name="id" #id="ngModel" [(ngModel)]="flight.id" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+              </div>
+
+              <div class="col-span-6 sm:col-span-3">
+                <label for="departure" class="block text-sm font-medium text-gray-700">Salida</label>
+                <input type="text" name="departure" #departure="ngModel" [(ngModel)]="flight.departure" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+              </div>
+
+              <div class="col-span-6 sm:col-span-4">
+                <label for="arrival" class="block text-sm font-medium text-gray-700">Destino</label>
+                <input type="text" name="arrival" #arrival="ngModel" [(ngModel)]="flight.arrival" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+              </div>
+
+              <div class="form-group col-md-6">
+                <h2>Elegir fecha para el vuelo</h2>
+                <div class="form-group">
+                  <div class="input-group">
+                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="dateSelected"
+                      [minDate]="minDate" ngbDatepicker #d="ngbDatepicker" required>
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary calendar" (click)="d.toggle()"
+                        type="button">📅</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-span-6 sm:col-span-3">
+                <label for="passengers" class="block text-sm font-medium text-gray-700">Pasajeros</label>
+                <input type="text" name="passengers" #passengers="ngModel" [(ngModel)]="flight.passengers" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+              </div>
+
+
+              <div class="col-span-6">
+                <label for="pilot" class="block text-sm font-medium text-gray-700">Piloto</label>
+                <input type="text" name="pilot" #pilot="ngModel" [(ngModel)]="flight.pilot" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+              </div>
+
+              <div class="col-span-6">
+                <label for="coPilot" class="block text-sm font-medium text-gray-700">Co Piloto</label>
+                <input type="text" name="coPilot" #coPilot="ngModel" [(ngModel)]="flight.coPilot" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+              </div>
+
+              <div class="col-span-6">
+                <label for="airplane" class="block text-sm font-medium text-gray-700">Aerolinea</label>
+                <input type="text" name="airplane" #airplane="ngModel" [(ngModel)]="flight.airplane" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+              </div>
+
+            </div>
+          </div>
+          <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+            <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              Añadir
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
