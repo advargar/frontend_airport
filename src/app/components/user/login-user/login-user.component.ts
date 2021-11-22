@@ -47,8 +47,11 @@ export class LoginUserComponent implements OnInit {
 							localStorage.setItem('token_user', this.token);
 							localStorage.setItem('identity_user', JSON.stringify(this.identity));
 
-							// Redirección a inicio
-              this._router.navigate(['inicio']);
+						// Redirección a inicio
+            this._router.navigate(['inicio'])
+            .then(() => {
+              window.location.reload();
+            });
 						},
 						error => {
 							this.status = 'error';
@@ -79,7 +82,11 @@ export class LoginUserComponent implements OnInit {
 				this.token = null;
 
 				// Redirección a inicio
-        this._router.navigate(['inicio']);
+        this._router.navigate(['inicio'])
+        .then(() => {
+          window.location.reload();
+        });
+
 			}
 		});
 	}
